@@ -1,0 +1,188 @@
+nav{
+    padding-top: 1%;
+    background-color:rgb(57, 62, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3rem;
+    list-style-type: none;
+}
+#logo{
+    height:20%;
+    width: auto;
+}
+li{
+    margin: 1rem;
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: orange;
+}
+  
+a:active{
+    background-color: white;
+}
+#item4{
+    text-decoration: underline;
+}
+#MainDiv{
+  font-size: 1rem;
+  background-color: rgb(143, 122, 136);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+
+}
+
+#submit{
+  margin-right: 42%;
+  margin-left: 40%;
+  animation-name: animationButton;
+  animation-duration: 3s;
+  animation-iteration-count: infinite; /*the button will keep on changing colors infinitly*/
+  background-color: rgb(9, 84, 155);
+}
+
+div{
+  animation-name: animation;
+  animation-duration: 3s;
+}
+footer{
+  background-color:rgb(57, 62, 70);
+  width: 100%;
+  padding-top: 2%;
+}
+#footer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  font-size: 2rem;
+  color:white;
+}
+#footerText{
+  background-color:rgb(57, 62, 70);
+  font-size: 1rem;
+  color:white;
+  text-align: center;
+}
+@keyframes animation{
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animationButton{ /*this will be used to change color of button continuously*/
+  0% {
+      background-color: rgb(84, 182, 189);
+  }
+  25% {
+    background-color: rgb(11, 123, 175);
+  }
+  50% {
+    background-color: rgb(7, 190, 129);
+  }
+  75% {
+    background-color: rgb(8, 173, 77);
+  }
+  100% {
+    background-color: rgb(29, 218, 107);
+  }
+}
+@media(max-width: 600px) {
+    /*same as the default case above, as I started with the smallest device and gradually did the rest*/
+}
+@media only screen and (min-width: 600px) {
+    nav{
+      flex-direction: row;
+      height: 20rem;
+    }
+    ul{
+      display: grid;
+    }
+    #item5{
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      text-align: center;
+    }
+    #logo{
+      height:45%;
+    }
+    li{
+      font-size: 1.8rem;
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+    nav{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 8rem;
+      
+    }
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-right: 2rem;
+    }
+    
+    li{
+      font-size: 1.6rem;
+    }
+    #MainDiv{
+      font-size: 1.4rem;
+    }
+    #logo{
+      height:90%;
+    }
+    input,select{
+      width:25%;
+    }
+
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    ul{
+      margin-right: 1.5rem;
+      padding-right: 1.8rem;
+    }
+
+  
+    li{
+        font-size: 1.8rem;
+      }
+      #MainDiv{
+        font-size: 1.7rem;
+      }
+    }
+    
+    @media only screen and (min-width: 1200px) {
+      ul{
+      margin-right: -2rem;
+      }
+      
+      li{
+        font-size: 2rem;
+      }
+      #MainDiv{
+        font-size: 2rem;
+      }
+    }

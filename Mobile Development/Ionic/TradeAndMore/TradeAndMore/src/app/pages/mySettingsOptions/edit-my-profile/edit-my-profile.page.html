@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button style="padding: 9px;" fill="clear" (click)="goToSettings()"><span style="color:var(--ion-color-new)">Back</span></ion-button>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate >
+    <ion-input   type="name" formControlName="ID" hidden>{{ user.ID }}</ion-input>
+    <ion-item class="rounded">
+      <ion-label class="inlabel" position="stacked">First Name</ion-label>
+      <ion-input   type="name" formControlName="FirstName"></ion-input>
+    </ion-item>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.required">
+      First Name is required.
+    </ion-label>
+  </div>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.pattern">
+      First Name should not contain spaces or numbers with a minimum length of 2.
+    </ion-label>
+    </div>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.maxlength">
+      First Name should not contain more than 30 characters.
+    </ion-label>
+  </div>
+    <ion-item class="rounded">
+      <ion-label class="inlabel" position="stacked">Last Name</ion-label>
+      <ion-input   type="name" formControlName="LastName"></ion-input>
+    </ion-item>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.required">
+      Last Name is required.
+    </ion-label>
+  </div>
+  <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.pattern">
+      Last Name should not contain spaces or numbers with a minimum length of 2.
+    </ion-label>
+  </div>
+  <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.maxlength">
+      Last Name should not contain more than 30 characters.
+    </ion-label>
+  </div>
+    <ion-item class="rounded">
+      <ion-label class="inlabel" position="stacked">Phone Number</ion-label>
+      <ion-input   type="number" formControlName="PhoneNumber"></ion-input>
+    </ion-item>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.PhoneNumber.errors?.required">
+      Phone Number is required.
+    </ion-label>
+  </div>
+    <ion-item  class="rounded">
+      <ion-label class="inlabel" position="stacked">Email</ion-label>
+      <ion-input type="Email" formControlName="Email"></ion-input>
+    </ion-item>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.required">
+      Email is required.
+    </ion-label>
+  </div>
+  <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.pattern">
+      Email is not in the correct format.
+    </ion-label>
+  </div>
+  <ion-item  class="rounded">
+    <ion-label class="inlabel" position="stacked">Wishlist</ion-label>
+    <ion-input type="Name" formControlName="Wishlist"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Location</ion-label>
+    <ion-select aria-required="true" placeholder="Select One" formControlName="Location">
+      <ion-select-option value="Akkar">Akkar</ion-select-option>
+      <ion-select-option value="Baalbeck-Hermel">Baalbeck-Hermel</ion-select-option>
+      <ion-select-option value="Beirut">Beirut</ion-select-option>
+      <ion-select-option value="Mount-Lebanon">Mount Lebanon</ion-select-option>
+      <ion-select-option value="Beqaa">Beqaa</ion-select-option>
+      <ion-select-option value="Nabatieh">Nabatieh</ion-select-option>
+      <ion-select-option value="North">North</ion-select-option>
+      <ion-select-option value="South">South</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.Location.errors?.required">
+      Location is required.
+    </ion-label>
+  </div>
+    <ion-button class="roundedMore" expand="block" color="new" type="submit"><strong style="color:white;">Confirm Update</strong></ion-button>
+</form>
+</div>
+</ion-content>

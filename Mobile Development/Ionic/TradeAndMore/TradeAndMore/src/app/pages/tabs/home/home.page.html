@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Newsfeed</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openNotifications()" fill="clear" color="new">
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="openReceipts()" fill="clear" color="new">
+        <ion-icon slot="icon-only" name="time"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<div style="margin-top:0px;text-align: center;" >
+  <div style="background-color:var(--ion-color-new);width:100%; padding: 5px;box-shadow: 3px 3px 5px gray;height: 40px;text-align: center; padding-top: 10px;">
+    <strong style="font-size:19px;color:white;margin-top: 10px;">Suggestions</strong>
+    </div>
+
+
+  <div   >
+    <ion-grid >
+      <ion-row wrap>
+      <ion-col *ngFor="let suggestion of suggestions;">
+    <ion-card style="width:65%; height:70%" >
+        <ion-label style="font-size:10px;" color="new" (click)="goTo(suggestion.email,suggestion.user_id)"><strong>{{suggestion.first_name}}  {{suggestion.last_name}}</strong></ion-label>
+      <ion-card-content>
+        <img src="{{suggestion.photo}}">
+      </ion-card-content>
+    </ion-card>
+    <hr>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</div>
+
+  <br>
+  <div style="background-color:var(--ion-color-new);width:100%; padding: 5px;margin-top: 10px; box-shadow: 3px 3px 5px gray;height: 40px;text-align: center; padding-top: 10px;">
+<strong style="font-size:19px;color:white;margin-top: 10px;">Recently Posted Items</strong>
+</div>
+  <br><br><br>
+    <div *ngFor="let post of posts" >
+
+          <ion-card style="width:90%;margin:auto; padding: 1px;">
+            <ion-item>
+              <ion-avatar>
+                <img src="{{post.photo}}">
+              </ion-avatar>
+              <ion-label style="margin-left: 5px;font-size: 15px;"color="new" (click)="goTo(post.email,post.user_id)"><strong>{{post.first_name}}  {{post.last_name}}</strong></ion-label>
+            </ion-item>
+            <ion-card-content>
+              <ion-item (click)="openItemModal(post)">
+              <img style="width:45%;margin-left: -10px;"src="{{post.item_image}}">
+              <div style="display: flex;flex-direction:column;margin-left: 7px;">
+              <span style="color:var(--ion-color-new);font-size: 13px;">Name: </span><p style="margin-left:4px;font-size: 13px;">{{post.item_name}}</p>
+              <span style="color:var(--ion-color-new);font-size: 13px;">Description:</span><p style="margin-left:4px;font-size: 13px;">{{post.item_description}}</p>
+
+            </div>
+            </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <hr>
+</div>
+</div>
+</ion-content>

@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mainContainer {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+    url('../Media/Main images/MainBackground.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: beige;
+}
+
+/* Header css start */
+
+.mainHeader {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.35s ease-in-out;
+  margin-bottom: 50px;
+}
+
+.mainHeader:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navLinks ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.mainLogo {
+  height: 100px;
+  width: 235px;
+}
+
+.navLinks a {
+  margin: 0 25px;
+  font-family: 'PT Serif', serif;
+  font-size: 32px;
+  color: #d65d18;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navLinks li {
+  transition: all 0.25s ease-in-out;
+}
+
+.navLinks li:hover {
+  transform: scale(1.3);
+}
+
+/* Header css end */
+
+/* Footer css start */
+
+.footerContainer {
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.35s ease-in-out;
+  padding: 30px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerContainer:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.footerTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+.footerTop > * {
+  width: 33.3%;
+}
+
+.openingHoursList {
+  list-style: none;
+}
+
+.openingHours {
+  color: white;
+  font-size: 16px;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-bottom: 5px;
+}
+
+.openingHoursTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dayOpen {
+  display: inline-block;
+  min-width: 90px;
+}
+
+.footerLogo {
+  height: 150px;
+  width: 320px;
+}
+
+.footerSocialLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.findUsOn {
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.iconify {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Inner container to make everything go to the right instead of sticking to the logo*/
+.footerSocial {
+  max-width: 70%;
+  margin-left: auto;
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerCatchyText {
+  color: white;
+  font-size: 30px;
+  font-family: 'Archivo Narrow', sans-serif;
+  text-align: center;
+}
+
+.footerCopyRight {
+  color: white;
+  font-size: 20px;
+  font-family: 'Archivo Narrow', sans-serif;
+  text-align: center;
+}
+
+/* Footer css end */
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(214, 93, 24);
+}
+
+@media only screen and (max-width: 600px) {
+  .mainLogo {
+    height: 80px;
+    width: 200px;
+  }
+
+  .navLinks a {
+    margin: 0 25px;
+    font-family: 'PT Serif', serif;
+    font-size: 24px;
+    color: #d65d18;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .footerSocial {
+    max-width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footerTop > * {
+    width: 100%;
+  }
+
+  .openingHoursList {
+    display: none;
+  }
+
+  .footerCatchyText {
+    font-size: 26px;
+  }
+  
+  .footerCopyRight {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .footerSocial {
+    max-width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footerTop > * {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .openingHoursList {
+    display: none;
+  }
+
+  .footerCatchyText {
+    font-size: 28px;
+  }
+  
+  .footerCopyRight {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .footerSocial {
+    max-width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footerTop > * {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .openingHoursList {
+    display: none;
+  }
+
+  .footerCatchyText {
+    font-size: 28px;
+  }
+  
+  .footerCopyRight {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .footerSocial {
+    max-width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footerTop > * {
+    width: 33.3%;
+    margin: 0 auto;
+  }
+
+  .openingHoursList {
+    display: block;
+  }
+
+  .footerCatchyText {
+    font-size: 28px;
+  }
+  
+  .footerCopyRight {
+    font-size: 20px;
+  }
+}

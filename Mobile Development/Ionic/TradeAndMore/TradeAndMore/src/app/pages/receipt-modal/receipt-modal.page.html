@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Check Receipt</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (color)="new" (click)="dismissModal()"><span style="color:var(--ion-color-new);">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div
+    style="width:80%;margin:auto;text-align:center;margin-top:30px;background-color: var(--ion-color-new);color:white">
+    <h1>RECEIPT ID: # {{receipt.receipt_id}}</h1>
+  </div>
+  <br>
+  <ion-list>
+    <ion-list-header> Request Sender Information </ion-list-header>
+    <br>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{receipt.sender_photo}}" />
+      </ion-avatar>
+      <ion-label>
+        <h3> <strong>Sender Name: </strong></h3>
+        <h3>{{receipt.sender_name}}</h3>
+        <h3><strong>Sender Email:</strong> </h3>
+        <h3>{{receipt.sender_email}}</h3>
+        <h3><strong>Sender Phone Number:</strong></h3>
+        <h3> {{receipt.sender_phone_number}}</h3>
+      </ion-label>
+    </ion-item>
+    <br>
+    <ion-list-header> Receiver Sender Information </ion-list-header>
+    <br>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{receipt.receiver_photo}}">
+      </ion-avatar>
+      <ion-label>
+        <h3> <strong>Receiver Name: </strong></h3>
+        <h3 >{{receipt.receiver_name}}</h3>
+        <h3><strong>Receiver Email:</strong> </h3>
+        <h3>{{receipt.receiver_email}}</h3>
+        <h3><strong>Receiver Phone Number:</strong></h3>
+        <h3> {{receipt.receiver_phone_number}}</h3>
+      </ion-label>
+    </ion-item>
+    <br>
+    <ion-list-header style="width:100%;"> Request Information </ion-list-header>
+    <br>
+    <ion-item>
+      <ion-label>
+        <h3> <strong>Request Type: </strong>{{receipt.exchange_type_name}}</h3>
+        <h3><strong>Receiver Item Name:</strong>{{receipt.receiver_item_name}} </h3>
+        <h3><strong>Item Price:</strong>{{receipt.receiver_item_price}} </h3>
+        <h3><strong>Receiver Item Image:</strong></h3>
+        <img style="width:60%;height:100px;margin:20%;" src="{{receipt.receiver_item_image}}">
+      </ion-label>
+    </ion-item>
+    <br>
+    <ion-item #{{receipt.exchange_type_name}} *ngIf="receipt.exchange_type_name=='Trade' ||receipt.exchange_type_name=='For Trade and For Sale'">
+      <ion-label>
+        <h3><strong>Sender Item Name:</strong>{{receipt.sender_item_name}} </h3>
+        <h3><strong>Sender Item Image:</strong></h3>
+        <img style="width:60%;height:100px;margin:20%;" src="{{receipt.sender_item_image}}">
+      </ion-label>
+      <hr>
+    </ion-item>
+    <br>
+    <ion-item #receipt.sender_item_id #{{receipt.exchange_type_name}} *ngIf="receipt.exchange_type_name=='For Trade or For Sale' && receipt.sender_item_id !=null">
+      <ion-label>
+        <h3><strong>Sender Item Name:</strong>{{receipt.sender_item_name}} </h3>
+        <h3><strong>Sender Item Image:</strong></h3>
+        <img style="width:60%;height:100px;margin:20%;" src="{{receipt.sender_item_image}}">
+      </ion-label>
+      <hr>
+    </ion-item>
+    <ion-item >
+         <ion-label>
+        <h3><strong>Request Date:</strong> </h3>
+        <h3>{{receipt.request_date}}</h3>
+        <h3><strong>Receipt generated on:</strong></h3>
+      </ion-label>
+      <hr>
+    </ion-item>
+  </ion-list>
+  <br><br>
+</ion-content>

@@ -1,0 +1,269 @@
+html{
+    background-color: rgb(236, 226, 219);
+}
+
+nav{
+    padding-top: 1%;
+    background-color:rgb(57, 62, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3rem;
+    list-style-type: none;
+}
+#logo{
+    height:20%;
+    width: auto;
+}
+li{
+    margin: 1rem;
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: orange;
+}
+  
+a:active{
+    background-color: white;
+}
+#item1{
+    text-decoration: underline; /*underlining the page we are currently at. used in all css pages depending on the item number*/
+}
+
+#mainDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+#div1{
+    margin-top: 2%;
+    background-color: beige;
+    animation-name: left_my_animation;
+    animation-timing-function: ease;
+    animation-duration: 2s; /*increasing duration by 1 second after every div so that they appear consecutively*/
+    max-width: 45rem;
+}
+
+#p1,#p2,#p3,#p4,#p5{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.homeImages,#vid{
+    width:100%;
+    height: auto;
+}
+
+#p1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /*multiple font choices in case main ones did not work*/
+
+  }
+
+#div2{
+    background-color: cornsilk;
+    animation-timing-function: ease;
+    animation-name: right_my_animation;
+    animation-duration: 3s;
+    max-width: 45rem;
+}
+
+#p2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#div3{
+    background-color: ghostwhite;
+    animation-timing-function: ease;
+    animation-name: left_my_animation;
+    animation-duration: 4s;
+    max-width: 45rem;
+
+}
+
+#p3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#div4{
+    background-color:floralwhite;
+    animation-timing-function: ease;
+    animation-name: right_my_animation;
+    animation-duration: 5s;
+    max-width: 45rem;
+
+}
+
+#p4{
+    font-family:Arial, Helvetica, sans-serif
+}
+#div5{
+    background-color:gainsboro;
+    padding-bottom: 2.5rem;
+    animation-timing-function: ease;
+    animation-name: left_my_animation;
+    animation-duration: 6s;
+    max-width: 45rem;
+
+}
+
+
+#p5{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+footer{
+    background-color:rgb(57, 62, 70);
+    width: 100%;
+    padding-top: 10%;
+}
+#footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    color:white;
+}
+#footerText{
+    font-size: 1rem;
+    color:white;
+}
+@keyframes left_my_animation{ /*gets the elements from the left*/
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes right_my_animation{ /*gets the elements from the right*/
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@media(max-width: 600px) {
+    /*same as the default case above, as I started with the smallest device and gradually did the rest*/
+}
+
+@media only screen and (min-width: 600px) {
+    nav{
+      flex-direction: row;
+      height: 20rem;
+    }
+    ul{
+      display: grid;
+    }
+    #item5{
+      grid-column: 1 / span 2; /*allowing contact us to take the place of 2 items in the 3rd for design purposes(5 items, 3 rows)*/
+      grid-row: 3;
+      text-align: center;
+    }
+    #logo{
+      height:45%;
+    }
+    li{
+      font-size: 1.8rem;
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+    nav{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 8rem;
+      
+    }
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-right: 2rem;
+    }
+    
+    li{
+      font-size: 1.6rem;
+    }
+  
+    #logo{
+      height:90%;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    ul{
+      margin-right: 1.5rem;
+      padding-right: 1.8rem;
+    }
+
+    #div2,#div4{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: unset;
+        height: 35rem;
+    }
+    #div5{
+        height: 35rem;
+        max-width: unset;
+
+    }
+    #div1,#div3{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        max-width: unset;
+        height: 35rem;
+
+    }
+    .homeImages{
+        max-width: 40rem;
+        width:100%;
+        height:100%;
+    }
+    #vid{
+        height:auto;
+    }
+    li{
+        font-size: 1.8rem;
+      }
+
+    footer{
+        margin-top:10%;
+    }
+}
+    @media only screen and (min-width: 1200px) {
+      ul{
+      margin-right: -2rem;
+      }
+      #div1, #div2, #div3, #div4, #div5{
+          width: 100%;
+      }
+      li{
+        font-size: 2rem;
+      }
+      footer{
+        margin-top:20%;
+    }
+    }

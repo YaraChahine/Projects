@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button style="padding: 9px;" fill="clear" (click)="goToSettings()"><span style="color:var(--ion-color-new)">Back</span></ion-button>
+    <ion-title>Change Photo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="center">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate >
+     <ion-item class="rounded">
+      <ion-label class="inlabel" position="stacked" stacked>Upload Picture</ion-label>
+      <ion-input type="file" [(ngModel)]="item_image" (change)="selectedFile($event)" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+    <div class="errorLabel">
+    <ion-label *ngIf="isSubmitted && errorControl.Picture.errors?.required">
+      Picture is required.
+    </ion-label>
+  </div>
+    <ion-button class="roundedMore" expand="block" color="new" type="submit"><strong style="color:white;">Change Photo</strong></ion-button>
+    <div class="signup">
+  </div>
+</form>
+</div>
+</ion-content>

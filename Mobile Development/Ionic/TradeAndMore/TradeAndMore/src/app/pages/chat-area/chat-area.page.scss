@@ -1,0 +1,57 @@
+html, body{
+  width: 100%;
+}
+
+
+.row1{
+  width: 100%;
+   max-width:inherit;
+}
+.timeLeft{
+  width: fit-content;
+  font-size: 65%;
+  text-align: right;
+
+}
+.timeLeft2{
+  width: fit-content;
+  font-size: 65%;
+  text-align: left;
+
+}
+.row2{
+  float: right;
+}
+.textLeft{
+  white-space: initial;
+}
+
+.textLeft2{
+  float: right;
+  width: 100%;
+  word-wrap: break-word;
+  white-space: initial;
+}
+
+.loggedin{
+  font-size: 20px;
+  color: red;
+}
+ion-grid{
+  max-width: 100%;
+  background-color:#ffffff;
+
+}
+.row4{
+  float: left;
+}
+.row3{
+  width: 100%;
+   max-width:inherit;
+   text-align: right !important;
+   word-wrap: break-word;
+   white-space: initial;
+}
+
+
+

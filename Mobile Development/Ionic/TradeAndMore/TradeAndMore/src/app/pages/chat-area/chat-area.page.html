@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{user.first_name}} {{user.last_name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (color)="new" (click)=goBack()><span style="color:var(--ion-color-new);">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color:var(--ion-color-new);width:97%;margin:auto;box-shadow: 2px 2px 4px gray;padding-top:1px; text-align:center;height: 40px;">
+    <h2 style="color: white;font-size:20px;font-weight: 600;margin-top: 10px;">Chat</h2>
+  </div>
+  <br><br>
+  <div *ngFor="let result of results ">
+    <ion-item class="item">
+
+      <ion-grid class="grid">
+        <div id="div1">
+          <ion-row class="row1" >
+            <ion-label class="textLeft" *ngIf="check(result.sender_id,id)==='No'">{{result.message}}</ion-label>
+          </ion-row>
+          <ion-row class="row2">
+            <ion-label class="timeLeft" *ngIf="check(result.sender_id,id)==='No'">{{result.time_sent}}</ion-label>
+          </ion-row>
+        
+        </div>
+        <div id="div2">
+
+          <ion-row class="row3">
+
+            <ion-label class="textLeft2" *ngIf="check(result.sender_id,id)==='Yes'"> {{result.message}}
+            </ion-label>
+          </ion-row>
+
+          <ion-row class="row4">
+
+            <ion-label class="timeLeft2" *ngIf="check(result.sender_id,id)==='Yes'"> {{result.time_sent}}</ion-label>
+          </ion-row>
+        </div>
+
+      </ion-grid>
+
+
+
+
+    </ion-item>
+  </div>
+
+
+  <ion-item class="input">
+    <ion-label position="floating">Write message</ion-label>
+    <div>
+      <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate>
+        <ion-textarea formControlName="Message"></ion-textarea>
+        <ion-button color="new" type="submit"><span style="color:white">Send</span></ion-button>
+      </form>
+    </div>
+
+  </ion-item>
+
+</ion-content>

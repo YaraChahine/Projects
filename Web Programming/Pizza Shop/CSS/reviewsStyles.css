@@ -1,0 +1,143 @@
+.reviewsMainContainer {
+  border-radius: 50px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin-bottom: 50px;
+}
+
+.nameAndRatingAndDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reviewName {
+  font-size: 24px;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-right: 20px;
+}
+
+.star {
+  color: gold;
+  margin-right: 2px;
+}
+
+.reviewDate {
+  font-size: 18px;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-left: auto;
+}
+
+.reviewDescription {
+  font-size: 22px;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .reviewsMainContainer {
+    width: 85%;
+  }
+
+  .reviewContainer {
+    width: 100%;
+  }
+
+  .nameAndRatingAndDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviewDescription {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .reviewsMainContainer {
+    width: 85%;
+  }
+
+  .reviewContainer {
+    width: 100%;
+  }
+
+  .reviewDescription {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px){
+  .reviewsMainContainer {
+    width: 85%;
+  }
+
+  .reviewContainer {
+    width: 100%;
+  }
+
+  .reviewDescription {
+    font-size: 24px;
+    
+  }
+
+  .reviewName {
+    font-size: 28px;
+    
+  }
+  
+  .star {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .reviewDate {
+    font-size: 20px;    
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+  .reviewsMainContainer {
+    width: 85%;
+  }
+  .reviewContainer {
+    width: 100%;
+  }
+
+  .reviewDescription {
+    font-size: 26px;   
+  }
+
+  .reviewName {
+    font-size: 30px;    
+  }
+  
+  .star {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .reviewDate {
+    font-size: 22px;    
+  }
+}

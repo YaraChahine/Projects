@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button style="padding: 9px;" fill="clear" (click)="goToProfile()"><span style="color:var(--ion-color-new)">Back</span></ion-button>
+
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="flex" style="text-align:center;">
+
+    <div class="title">
+      <h2>Settings </h2>
+    </div>
+  <div class="flex-item">
+    <ion-button fill="clear" (click)="goToEditProfile()"><span>Edit Profile</span></ion-button>
+  </div>
+  <div class="flex-item">
+    <ion-button fill="clear" (click)="goToChangePassword()"><span> Password</span></ion-button>
+  </div>
+  <div class="flex-item">
+    <ion-button fill="clear" (click)="goToChangePhoto()"><span>Change Photo</span></ion-button>
+  </div>
+  <div class="flex-item">
+    <ion-button fill="clear" (click)="logOut()"><span>Log Out</span></ion-button>
+  </div>
+</div>
+</ion-content>

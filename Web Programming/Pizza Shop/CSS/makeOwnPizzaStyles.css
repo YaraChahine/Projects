@@ -1,0 +1,40 @@
+.mainCreationContainer {
+  color: beige;
+
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: all 0.35s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-size-adjust: 50%;
+  size: 100%;
+}
+
+.addToppingsBtn {
+  width: 8%;
+  margin: 20px auto 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding: 5px;
+  background: linear-gradient(to right, white 50%, green 50%) left;
+  background-size: 200%;
+  color: black;
+}
+
+.addToppingsBtn:active {
+  background-position: right;
+}
+
+.addToppingsBtn .checkmarkRotate {
+  margin-right: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+.toppingsOrder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,20 @@
+tree("Root")
+	fallback
+		while not SeePlayer
+			
+			sequence
+				ChooseRandom
+				MoveToDest
+		while SeePlayer
+			sequence
+				SeePlayer
+				FollowPlayer
+				tree("Attack")
+
+tree("Attack")
+	fallback
+		while PlayerClose
+			sequence
+				PlayerClose
+				AttackPlayer
+				Wait(3.0)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Update Image</h2>
+            <form action="http://localhost:8081/updateSubmission" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="ID" value="<%= ID  %>">
+              <input type="file" id="image" name="uploadedFile" required/><br><br> 
+
+              <% if(result.type === "Framework"){ %>
+                Pick type of slide <select name="type" id="type"  required>
+                  <option value="Flowchart">Flowchart</option>
+                  <option value="Framework" selected>Framework</option>
+                </select>               
+                <br><br>
+              <% } %>
+ 
+              <% if(result.type === "Flowchart"){ %>
+                Pick type of slide <select name="type" id="type"  required>
+                  <option value="Flowchart" selected>Flowchart</option>
+                  <option value="Framework">Framework</option>
+                </select>   
+                <br><br>            
+              <% } %>
+
+              Email to send the presentation to: 
+              <input type="email" name="email" value="<%= result.email %>" required><br><br>
+
+              <input type="submit" value="Upload the file"/>
+            </form>     
+      </div> 
+
+</body>
+</html>

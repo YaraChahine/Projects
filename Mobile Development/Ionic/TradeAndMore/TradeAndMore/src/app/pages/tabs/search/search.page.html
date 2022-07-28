@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="flex-box">
+
+
+    <ion-searchbar (ionChange)="searchTermm()" placeholder="Find Something.." [(ngModel)]="searchTerm"
+      showCancelButton="focus"  animated>
+    </ion-searchbar>
+  </div>
+
+  <ion-grid>
+    <ion-row class="images" (ionChange)="buttonsChanged($event)">
+      <ion-segment mode="md" [value]="buttonValue">
+        <ion-segment-button [value]="item?.value" *ngFor="let item of buttonItems">
+          <p>{{item.value}}</p>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+  </ion-grid>
+
+
+  <div [ngSwitch]="buttonValue">
+    <ion-list *ngSwitchCase="'People'" class="photo-grid">
+
+      <h2 style="margin-left:20px;color:medium;">Results:</h2>
+      <hr>
+      <div *ngIf="searchDone==1">
+        <div *ngFor="let result of results | filter : searchTerm">
+          <ion-card>
+            <ion-item>
+
+              <ion-avatar>
+                <img src="{{result.photo}}">
+              </ion-avatar>
+              <ion-button fill="clear" (click)="goTo(result.email,result.user_id)">
+                <ion-label style="color: rgb(39, 39, 39);font-size: 14px;">{{result.first_name}} {{result.last_name}}
+                </ion-label>
+              </ion-button>
+        
+            <ion-button color="new"(click)="goTo(result.email,result.user_id)" #{{result.user_id}} slot="end"
+           ><span style="color:white">Visit Profile</span></ion-button>
+    
+            </ion-item>
+
+            <ion-card-content>
+
+            </ion-card-content>
+          </ion-card>
+
+        </div>
+      </div>
+    </ion-list>
+
+
+
+    <ion-list *ngSwitchCase="'Items'" class="photo-grid">
+      <div *ngIf="searchDone==1">
+        <div *ngFor="let item of items | filter : searchTerm">
+          <ion-card (click)="openItemModal(item)">
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="{{item.item_image}}" />
+              </ion-avatar>
+              <ion-label>
+                <h2>{{item.item_name}}</h2>
+                <h3>Item Type : {{item.type_name}}</h3>
+                <h3>Posted By : {{item.first_name}} {{item.last_name}}</h3>
+                <h3>Category - Subcategory: </h3>
+                <h3>{{item.category_name}} {{item.subcategory_name}}</h3>
+
+                <p style="width:100%;margin:auto;height:30px;">{{item.item_description}}</p>
+              </ion-label>
+            </ion-item>
+
+            <ion-card-content>
+
+            </ion-card-content>
+          </ion-card>
+
+        </div>
+      </div>
+    </ion-list>
+  </div>
+
+</ion-content>

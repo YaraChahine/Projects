@@ -1,0 +1,92 @@
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.mainBody:hover .bodyTitle {
+  color: white;
+  transform: scale(1.25);
+}
+
+.mainBody:hover .bodyText {
+  color: white;
+  transform: scale(1.25);
+}
+
+.bodyTitle {
+  margin-bottom: 100px;
+  color: #b8b8b8;
+  font-size: 80px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.bodyText {
+  justify-self: flex-end;
+  color: #b8b8b8;
+  font-size: 50px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .bodyTitle {
+    margin-bottom: 100px;
+    font-size: 60px;
+  }
+  
+  .bodyText {
+    color: #b8b8b8;
+    font-size: 30px;
+  }
+
+  .mainBody:hover .bodyTitle {
+    transform: scale(1.1);
+  }
+  
+  .mainBody:hover .bodyText {
+    transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .bodyTitle {
+    max-width: 80%;
+  }
+  
+  .bodyText {
+    max-width: 80%;
+  }
+
+  .mainBody:hover .bodyTitle {
+    transform: scale(1.2);
+  }
+  
+  .mainBody:hover .bodyText {
+    transform: scale(1.2);
+  }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .bodyTitle {
+    max-width: 80%;
+  }
+  
+  .bodyText {
+    max-width: 80%;
+  }
+
+  .mainBody:hover .bodyTitle {
+    transform: scale(1.2);
+  }
+  
+  .mainBody:hover .bodyText {
+    transform: scale(1.2);
+  }
+}

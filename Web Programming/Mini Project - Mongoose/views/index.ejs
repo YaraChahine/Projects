@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/CSS/index.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+        <div>
+
+    <img src="../public/assets/logo.png">
+    <h1>Upload a sketch</h1>
+    <form action="http://localhost:8081/uploadFile" method="post" enctype="multipart/form-data">
+      <input type="file" id="imgName" name="uploadedFile" required/><br><br>
+      Pick type of slide <select name="type" id="type"  required>
+        <option value="Flowchart">Flowchart</option>
+        <option value="Framework">Framework</option>
+      </select>
+      <br><br>
+      Email: 
+      <input id="email" type="email" name="email" required><br><br>
+      <input type="submit" value="Upload the file"/>
+    </form>
+    <br>
+    <a href="./history">My history</a>
+  </div>
+</body>
+</html>

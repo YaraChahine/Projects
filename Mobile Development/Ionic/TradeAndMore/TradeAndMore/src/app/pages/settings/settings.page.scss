@@ -1,0 +1,25 @@
+
+.title{
+    padding: 5px;
+    background-color: var(--ion-color-new);
+    color:white;
+    margin-bottom: 70px;
+    
+    h2{
+        font-weight: 600;
+    }
+
+}
+.flex-item{
+   
+    width:90%;
+    margin: auto;
+    margin-bottom: 13px;
+    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 7px;
+    span{
+        color: var(--ion-color-new);
+        font-weight: 600;
+    }
+color: var(--ion-color-new) ;
+}

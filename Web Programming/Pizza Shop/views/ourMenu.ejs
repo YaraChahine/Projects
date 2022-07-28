@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Menu</title>
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/menuStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Div mainContainer for the background image, copy to other pages -->
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+      <!-- Header ends here -->
+      <div class="menuMainContainer">
+        <div class="pizzaContainer" id="margheritaPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Margherita pizza.jpg"
+                alt="Margherita pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">10$</p>
+            </div>
+            <p class="pizzaRating">
+              4.3 / 5 <br>
+              50 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Margherita pizza</p>
+            <p class="pizzaDescription">
+              A thin crust pizza, topped with tomato sauce and a rich layer of
+              cheese.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="vegetarianPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Vegetarian pizza.jpg"
+                alt="Vegetarian pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              4.1 / 5 <br>
+              73 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Vegetarian pizza</p>
+            <p class="pizzaDescription">
+              A thin crust pizza, topped with tomato sauce, green peppers,
+              onions, black olives, mushrooms, and cheese.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="pepperoniPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Pepperoni pizza.jpg"
+                alt="Pepperoni pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              4.6 / 5 <br>
+              94 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Pepperoni pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with tomato sauce, a rich layer of
+              cheese, and beef pepperoni.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="meatzzaPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Meatzza pizza.jpg"
+                alt="Meatzza pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              4.2 / 5 <br>
+              43 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Meatzza pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with tomato sauce, a rich layer of
+              cheese, beef pepperoni, and sausage.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="chickenBBQPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/ChickenBBQ pizza.jpg"
+                alt="ChickenBBQ pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              4.7 / 5 <br>
+              103 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Chicken Barbeque pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with grilled chicken, onions, a rich
+              layer of american cheese and mozzarella, oregano, and barbeque
+              sauce.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="chickenRanchPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/ChickenRanch pizza.jpg"
+                alt="ChickenRanch pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              4.0 / 5 <br>
+              38 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Chicken Ranch pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with grilled chicken, onions, a rich
+              layer of american cheese and mozzarella, oregano, and ranch sauce.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="hawaiianPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Hawaiian pizza.jpg"
+                alt="Hawaiian pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">15$</p>
+            </div>
+            <p class="pizzaRating">
+              3.8 / 5 <br>
+              32 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Hawaiian pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with tomato sauce, a rich layer of
+              cheese, beef pepperoni, and pineapple slices.
+            </p>
+          </div>
+        </div>
+        <div class="pizzaContainer" id="extravaganzzaPizza">
+          <div class="leftSide">
+            <div class="imgAndPriceContainer">
+              <img
+                src="../Media/Pizza Images/Extravaganzza pizza.jpg"
+                alt="Extravaganzza pizza"
+                class="pizzaImage"
+              />
+              <p class="pizzaPrice">20$</p>
+            </div>
+            <p class="pizzaRating">
+              4.4 / 5 <br>
+              63 ratings
+            </p>
+          </div>
+          <div class="rightSide">
+            <p class="pizzaName">Extravaganzza pizza</p>
+            <p class="pizzaDescription">
+              A thick crust pizza, topped with tomato sauce, a rich layer of
+              cheese, onions, green peppers, black olives, mushrooms, beef, beef
+              pepperoni, and sausage.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer starts here, copy to other pages -->
+      <%- include('partials/footer'); %>
+      <!-- Footer ends here  -->
+    </div>
+    <!-- Script for external icons -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </body>
+</html>

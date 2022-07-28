@@ -1,0 +1,192 @@
+.pageMainContainer {
+  border-radius: 50px;
+  width: 40%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  border-bottom: 2px solid rgba(220, 220, 220, 1);
+}
+
+.sectionContainer:last-child{
+  border-bottom: none;
+}
+
+.containerTitle {
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 32px;
+  margin: 20px 0;
+  font-weight: 200;
+  text-align: center;
+}
+
+.inputStyle {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  font-size: 20px;
+  background: #cdcdcd;
+  font-weight: bold;
+  font-family: 'Archivo Narrow', sans-serif;
+  resize: none;
+
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.9);
+}
+
+.orderButton {
+  width: 30%;
+  display: block;
+  margin: 20px auto 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding: 5px;
+  /* Linear gradient that is divided into two halves, and size multiplied by two so only one appears */
+  background: linear-gradient(to right, red 50%, green 50%) left;
+  background-size: 200%;
+  transition: all 0.7s ease-in-out;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.9);
+}
+
+.orderButton:active {
+  background-position: right;
+}
+
+.orderButton .checkmarkRotate{
+  margin-right: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+.orderButton:active .checkmarkRotate{
+  transform: rotateZ(360deg)
+}
+
+.zomatoLink {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.supportMessage{
+  color: white;
+  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+.supportIcon{
+  width: 40px;
+  height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .pageMainContainer {
+    width: 85%;
+  }
+
+  .sectionContainer {
+    max-width: 100%;
+  }
+
+  .containerTitle {
+    font-size: 26px;
+  }
+
+  .orderButton {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .pageMainContainer {
+    width: 85%;
+  }
+
+  .sectionContainer {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .containerTitle {
+    font-size: 26px;
+  }
+
+  .orderButton {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .pageMainContainer {
+    width: 85%;
+  }
+
+  .sectionContainer {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .containerTitle {
+    font-size: 36px;
+  }
+
+  .orderButton {
+    width: 30%;
+  }
+
+  .inputStyle {
+    font-size: 24px;
+  }
+
+  .supportMessage{
+    font-size: 28px;
+  }
+
+  .supportIcon{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .pageMainContainer {
+    width: 85%;
+  }
+
+  .inputStyle {
+    font-size: 24px;
+  }
+
+  .orderButton {
+    width: 40%;
+  }
+
+  .supportMessage{
+    font-size: 28px;
+  }
+
+  .supportIcon{
+    width: 60px;
+    height: 60px;
+  }
+}

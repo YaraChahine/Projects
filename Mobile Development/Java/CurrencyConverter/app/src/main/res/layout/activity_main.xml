@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Title_Text"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="60dp"
+        android:text="Currency Converter"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <ImageView
+        android:id="@+id/DollarImage"
+        android:layout_width="353dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_Text"
+        app:srcCompat="@drawable/dollar" />
+
+    <EditText
+        android:id="@+id/TextOfDollarAmount"
+        android:layout_width="235dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="121dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/DollarImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_Text"
+        app:layout_constraintVertical_bias="0.89"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/DollarText"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="24dp"
+        android:text="Enter the amount in USD"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toTopOf="@+id/TextOfDollarAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_Text"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/ConvertingCutton"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="268dp"
+        android:onClick="convert"
+        android:text="Press this button to convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DollarImage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/LebanesePoundsText"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="234dp"
+        android:text="Enter the amount in LBP"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConvertingCutton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/TextOfLBPAmount"
+        android:layout_width="235dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="169dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LebanesePoundsText"
+        app:layout_constraintVertical_bias="0.12"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/LBPimage"
+        android:layout_width="353dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextOfLBPAmount"
+        app:layout_constraintVertical_bias="0.021"
+        app:srcCompat="@drawable/lbp" />
+
+    <TextView
+        android:id="@+id/RateAndConverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="11dp"
+        android:text="1 USD = 15,000 LBP"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBPimage" />
+
+    <CheckBox
+        android:id="@+id/LBP_Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="20dp"
+        android:text="Convert To LBP"
+        app:layout_constraintBottom_toTopOf="@+id/TextOfDollarAmount"
+        app:layout_constraintEnd_toStartOf="@+id/DollarText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title_Text" />
+
+    <CheckBox
+        android:id="@+id/USD_Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="22dp"
+        android:text="Convert To USD"
+        app:layout_constraintBottom_toTopOf="@+id/TextOfLBPAmount"
+        app:layout_constraintEnd_toStartOf="@+id/LebanesePoundsText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConvertingCutton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

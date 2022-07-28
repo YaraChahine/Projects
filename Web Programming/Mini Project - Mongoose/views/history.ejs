@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/CSS/history.css"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+    <% if (typeof message != "undefined") { %>
+        <div class="alert">
+            <h2>&times;        <%= message %></h2>
+            <a style="text-decoration:none;" href="./index">Go back</a>    
+          </div>
+    <% } %>    
+    <% if (results.length != 0) { %>
+    <div>
+        <div>
+            
+        <table id="mytable" style="overflow-x:auto;">
+            <thead>
+                <tr>
+                    <th>Submission Number</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                    <th>Image</th>
+                    <th>Delete Submission</th>
+                    <th>Update Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach(submission => { %>
+                    <tr id="<%= submission._id %>">
+                        <td></td>
+                        <td><%= submission.email %> </td>
+                        <td><%= submission.type %> </td>
+                        <td><img src="../<%= submission.image %>"></td>
+                        <td><button onclick="RemoveSubmissionById('<%= submission._id %>')">Delete</button></td>
+                        <td><button onclick="window.location.href='/updateSubmission?id=<%= submission._id %>'">Update</button></td>            
+                    </tr>                      
+                <% }) %>            
+            </tbody>
+        </table>
+            </div>
+        <div id="piechart"></div>
+        </div>
+        <% } %> 
+       
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+            
+    function drawChart() {
+        var flowChartCount = '<%= typeCount %>';
+        var totalCount = '<%= count %>';
+        var frameWorkCount = parseInt(totalCount) - parseInt(flowChartCount);
+        var data = google.visualization.arrayToDataTable([
+            ['Type', 'Total Count'],
+            ['Flowchart', parseInt(flowChartCount)],
+            ['Framework', parseInt(frameWorkCount)]
+        ]);
+            
+        var options = {'title':'Your total submissions: <%= count %>' , 'width':550, 'height':400};
+            
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+
+
+        function RemoveSubmissionById(Id) {
+            fetch("http://localhost:8081/deleteSubmission", {
+                method: "DELETE",
+                headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                },
+                body: `ID=${Id}`,
+            })
+                .then(function (response) {
+                return response.text();
+                })
+                .then(function (data) {
+                if (data == "success") {
+                    var submission = document.getElementById(Id);
+                if (submission) {
+                    submission.remove();
+                }
+            }
+            })
+            .catch(function (err) {
+            console.error(err);
+            });
+        }
+</script>
+            
+</body>
+</html>

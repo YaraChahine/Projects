@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us / Order</title>
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/contactUsStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Div mainContainer for the background image, copy to other pages -->
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+
+      <!-- Header ends here -->
+      <form action="http://127.0.0.1:8081/processOrderForm" method="get">
+      <div class="pageMainContainer">
+        <div class="sectionContainer">
+          <h2 class="containerTitle">
+            Please place your order below and the date and time of when you'd
+            like to receive it.
+          </h2>
+
+          <input
+            type="text"
+            name="orderName"
+            placeholder="Name"
+            class="inputStyle"
+            id="orderName"
+          />
+          <p id="orderNameError" class="error"></p>
+
+          <input
+            type="text"
+            name="orderEmail"
+            placeholder="Email address"
+            class="inputStyle"
+            id="orderEmail"
+          />
+          <p id="orderEmailError" class="error"></p>
+
+          <input
+            type="text"
+            name="orderPhoneNum"
+            placeholder="Phone Number"
+            class="inputStyle"
+            id="orderPhoneNum"
+          />
+          <p id="orderPhoneNumError" class="error"></p>
+
+          <input type="datetime-local" name="orderDate" class="inputStyle" id="orderDate" />
+          <p id="orderDateError" class="error"></p>
+
+          <textarea
+            name="orderAddress"
+            placeholder="Your address"
+            cols="30"
+            rows="5"
+            class="inputStyle"
+            id="orderAddress"
+          ></textarea>
+          <p id="orderAddressError" class="error"></p>
+
+          <select name="pizzaChosen" class="inputStyle" id="orderChosenPizza" multiple>
+            <option value="" selected disabled>Please choose a pizza / pizzas</option>
+            <option value="Margherita pizza">Margherita pizza</option>
+            <option value="Vegetarian pizza">Vegetarian pizza</option>
+            <option value="Pepperoni pizza">Pepperoni pizza</option>
+            <option value="Meatzza pizza">Meatzza pizza</option>
+            <option value="Chicken Barbeque pizza">
+              Chicken Barbeque pizza
+            </option>
+            <option value="Chicken Ranch pizza">
+              Chicken Ranch pizza
+            </option>
+            <option value="Hawaiian pizza">Hawaiian pizza</option>
+            <option value="Extravaganzza pizza">
+              Extravaganzza pizza
+            </option>
+          </select>
+          <p id="orderChosenPizzaError" class="error"></p>
+
+          <p id="orderFormError"></p>
+          <button class="orderButton" type="submit" id="orderButton">
+            <span
+              class="iconify checkmarkRotate"
+              data-icon="eva:checkmark-outline"
+            ></span>
+          </button>
+          <h2 class="containerTitle">
+            Or if you have a zomato account and prefer to order from there,
+            please click on the zomato link to be redirected to our page.
+            <br />
+            <span
+              class="iconify zomatoLink"
+              data-icon="simple-icons:zomato"
+              style="color: white"
+            ></span>
+          </h2>
+        </div>
+      </form>
+      <form action="http://127.0.0.1:8081/processReviewForm" method="get">
+        <div class="sectionContainer">
+          <h2 class="containerTitle">
+            Have you ordered from us and you want to leave a review? We'd love
+            to hear from you.
+          </h2>
+
+          <input
+            type="text"
+            name="reviewName"
+            placeholder="Name"
+            class="inputStyle"
+            id="reviewName"
+          />
+          <p id="reviewNameError" class="error"></p>
+
+          <input
+            type="text"
+            name="reviewEmail"
+            placeholder="Email address"
+            class="inputStyle"
+            id="reviewEmail"
+          />
+          <p id="reviewEmailError" class="error"></p>
+
+          <input
+            type="text"
+            name="reviewPhoneNum"
+            placeholder="Phone Number"
+            class="inputStyle"
+            id="reviewPhoneNum"
+          />
+          <p id="reviewPhoneNumError" class="error"></p>
+
+          <textarea
+            name="reviewContent"
+            placeholder="Your review"
+            cols="30"
+            rows="5"
+            class="inputStyle"
+            id="reviewContent"
+          ></textarea>
+          <p id="reviewContentError" class="error"></p>
+          <p id="reviewFormError" class="error"></p>
+
+          <button class="orderButton" type="submit" id="reviewButton" onclick="sendPOSTDataViaAjax()">
+            <span
+              class="iconify checkmarkRotate"
+              data-icon="eva:checkmark-outline"
+            ></span>
+          </button>
+        </form>
+          <h2 class="containerTitle">
+            All of our reviews are carefully read so we can continue serving you
+            in the best way possible.
+          </h2>
+        </div>
+        <div class="sectionContainer">
+          <h2 class="containerTitle">
+            For further inquiries or support, please don't hesitate to contact
+            us.
+            <br />
+            Our team would be more than happy to assist you.
+          </h2>
+
+          <p class="supportMessage">
+            <span
+              class="iconify supportIcon"
+              data-icon="clarity:email-line"
+            ></span
+            >support@TheCornerPizzeria.com
+          </p>
+          <p class="supportMessage">
+            <span
+              class="iconify supportIcon"
+              data-icon="ant-design:phone-filled"
+            ></span
+            >+961 1 000001
+          </p>
+        </div>
+      </div>
+      <!-- Footer starts here, copy to other pages -->
+      <%- include('partials/footer'); %>
+
+      <!-- Footer ends here  -->
+    </div>
+    <script src="../JS/orderJS.js"></script>
+    <script src="../JS/reviewJS.js"></script>
+    <!-- Script for external icons -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js">
+      // function sendPOSTDataViaAjax() {
+      //   const xhttp = new XMLHttpRequest();
+      //   xhttp.open("post", "http://localhost:8081/");
+      //   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      //   xhttp.send("Reviews");
+      // }
+    </script>
+  </body>
+</html>

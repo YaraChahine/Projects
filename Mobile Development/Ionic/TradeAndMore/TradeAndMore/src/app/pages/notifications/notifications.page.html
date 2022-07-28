@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notifications</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (color)="new" (click)="back()"><span style="color:var(--ion-color-new);">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="images" (ionChange)="buttonsChanged($event)">
+      <ion-segment mode="md" [value]="buttonValue">
+        <ion-segment-button [value]="item?.value" *ngFor="let item of buttonItems">
+          <p>{{item.value}}</p>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+  </ion-grid>
+
+
+  <div [ngSwitch]="buttonValue">
+    <ion-list *ngSwitchCase="'Received'" class="photo-grid">
+
+      <ion-item>
+        <div style="color:var(--ion-color-new);font-weight: 600;">Pending Requests</div>
+      </ion-item>
+
+      <br>
+      <div *ngFor="let request of requests">
+        <div *ngFor="let item of items">
+          <div #{{item.item_id}} #{{request.receiver_item_id}}
+            *ngIf="item.item_id==request.receiver_item_id&&  request.request_status==0">
+
+            <ion-item style="width:100%; padding: -30px;" button (click)="hey(request.pending_request_id)">
+              <ion-avatar slot="start">
+
+                <img src="{{request.photo}}">
+              </ion-avatar>
+              <div #{{request.sender_item_id}} *ngIf="request.sender_item_id!=null">
+                <p><strong #{{request.request_status}} #{{request.email}} #{{request.user_id}} button
+                    (click)="goTo(request.email,request.user_id)"> {{request.first_name}} {{request.last_name}}
+                  </strong>wants to trade his
+                  "{{request.item_name}}"
+                  with your
+                  "{{item.item_name}}"
+                </p>
+                <ion-label color="medium"
+                  style="color:rgb(78, 78, 78);margin-bottom: 3px; padding: 3px;margin-top: -13px;">
+                  <h3 style="float:right;color:rgb(120, 120, 120);">{{request.request_date}}</h3>
+                </ion-label>
+              </div>
+              <div #{{request.sender_item_id}} *ngIf="request.sender_item_id==null&&item.item_type!=5">
+                <p><strong #{{request.request_status}} #{{request.email}} #{{request.user_id}} button
+                    (click)="goTo(request.email,request.user_id)"> {{request.first_name}} {{request.last_name}}
+                  </strong>wants to purchase your
+
+                  "{{item.item_name}}"
+                </p>
+                <ion-label color="medium"
+                  style="color:rgb(78, 78, 78);margin-bottom: 3px; padding: 3px;margin-top: -13px;">
+                  <h3 style="float:right;color:rgb(120, 120, 120);">{{request.request_date}}</h3>
+                </ion-label>
+              </div>
+              <div #{{request.sender_item_id}} *ngIf="request.sender_item_id==null&&item.item_type==5">
+                <p><strong #{{request.request_status}} #{{request.email}} #{{request.user_id}} button
+                    (click)="goTo(request.email,request.user_id)"> {{request.first_name}} {{request.last_name}}
+                  </strong>is requesting your
+                  "{{item.item_name}}"
+                </p>
+                <ion-label color="medium"
+                  style="color:rgb(78, 78, 78);margin-bottom: 3px; padding: 3px;margin-top: -13px;">
+                  <h3 style="float:right;color:rgb(120, 120, 120);">{{request.request_date}}</h3>
+                </ion-label>
+              </div>
+
+            </ion-item>
+          </div>
+        </div>
+      </div>
+      <ion-item>
+        <div style="color:var(--ion-color-new);font-weight: 600;">Bids</div>
+      </ion-item>
+        <div *ngFor="let completed_bid of completed_bids">
+          <div *ngIf="completed_bid.is_active==0">
+          <ion-item >
+        <p><strong>{{completed_bid.first_name}} {{completed_bid.last_name}}  </strong> has
+          placed a {{completed_bid.item_price}}$ bid on your 
+           '{{completed_bid.item_name}}'</p>
+      </ion-item>
+    </div>
+        </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Sent'" class="photo-grid">
+
+      <ion-item>
+        <div style="color:var(--ion-color-new);font-weight: 600;">Pending Requests</div>
+      </ion-item>
+
+      <br>
+      <div *ngFor="let request of sent_requests">
+        <ion-item  *ngIf="request.request_status!=1" style="width:100%; padding: -30px;">
+          <ion-avatar slot="start">
+
+            <img src="{{request.photo}}">
+          </ion-avatar>
+
+          <p #{{request.request_status}} *ngIf="request.request_status==0">Your request to <strong #{{request.email}}
+              #{{request.user_id}} button (click)="goTo(request.email,request.user_id)">
+              {{request.first_name}} {{request.last_name}} </strong> is pending approval
+          </p>
+          <p #{{request.request_status}} *ngIf="request.request_status==2">Your request to <strong #{{request.email}}
+              #{{request.user_id}} button (click)="goTo(request.email,request.user_id)">
+              {{request.first_name}} {{request.last_name}} </strong>
+            has been <span style="color:rgb(229, 52, 120);">rejected</span>
+          </p>
+
+
+        </ion-item>
+          <ion-item *ngIf="request.request_status==1" #{{request.request_status}}  button
+            (click)="openReviewModal(request)" style="width:100%; padding: -30px;" >
+            <ion-avatar slot="start">
+
+              <img src="{{request.photo}}">
+            </ion-avatar>
+
+            <p #{{request.request_status}} *ngIf="request.request_status==1">Your request to <strong #{{request.email}}
+                #{{request.user_id}} button (click)="goTo(request.email,request.user_id)">
+                {{request.first_name}} {{request.last_name}}
+              </strong>
+              has been <span style="color:rgb(28, 186, 99);">approved</span>
+            </p>
+          </ion-item>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

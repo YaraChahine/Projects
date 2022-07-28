@@ -1,0 +1,189 @@
+nav{
+    padding-top: 1%;
+    background-color:rgb(57, 62, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+}
+#navUL{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3rem;
+    list-style-type: none; 
+}
+#logo{
+    height:20%;
+    width: auto;
+}
+#item1,#item2,#item3,#item4,#item5{
+    margin: 1rem;
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: orange;
+}
+  
+a:active{
+    background-color: white;
+}
+#item3{
+    text-decoration: underline;
+}
+
+#Outerdiv{
+  margin:0;
+  background-color: chocolate;
+  padding-top: 5%;
+}
+h3{
+  font-size: 2rem;
+}
+.InnerDiv1{
+  text-align: center;
+}
+.InnerDiv2{
+  width: 100%;
+  height: auto;
+  animation-name: my_animation_imgs;
+  animation-duration: 2s;  /*the image finishes its animation before the menu appears completely*/
+}
+.InnerDiv3{
+  display: grid;
+  grid-template-columns: auto auto; /*the names and prices appear next to each other*/
+  animation-name: my_animation_text;
+  animation-duration: 4s;
+}
+.secondSet{
+  list-style-type: none;
+}
+footer{
+  background-color:rgb(57, 62, 70);
+  width: 100%;
+  padding-top: 2%;
+}
+#footer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  font-size: 2rem;
+  color:white;
+}
+#footerText{
+  background-color:rgb(57, 62, 70);
+  font-size: 1rem;
+  color:white;
+  text-align: center;
+}
+@keyframes my_animation_imgs{
+    0% {
+        transform: translateX(-100%); /*moving the image on the x-axis*/
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes my_animation_text{
+    0% {
+        opacity:0; /*the text appears slowly, 0: invisible, 1: compeletely visible*/
+    }
+    100% {
+        opacity:1;
+    }
+}
+@media(max-width: 600px) {
+    /*same as the default case above, as I started with the smallest device and gradually did the rest*/
+}
+@media only screen and (min-width: 600px) {
+    nav{
+      flex-direction: row;
+      height: 20rem;
+    }
+    #navUL{
+      display: grid;
+    }
+    #item5{
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      text-align: center;
+    }
+    #logo{
+      height:45%;
+    }
+    #item1,#item2,#item3,#item4,#item5{
+      font-size: 1.8rem;
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+   nav{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 8rem;
+      
+    }
+    #navUL{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-right: 2rem;
+    }
+    
+    #item1,#item2,#item3,#item4,#item5{
+      font-size: 1.6rem;
+    }
+  
+    #logo{
+      height:90%;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    #navUL{
+      margin-right: 1.5rem;
+      padding-right: 1.8rem;
+    }
+
+  
+    #item1,#item2,#item3,#item4,#item5{
+        font-size: 1.8rem;
+      }
+      h3{
+        padding-top: 20%;
+      }
+      #Outerdiv{
+        display: grid;
+        grid-template-columns: auto auto auto;  /*all items of certain type appear next to each other now*/
+        gap: 1rem;
+      }
+      .InnerDiv2{
+        width: 80%;
+        height: auto;
+      }
+      .InnerDiv3{
+        padding-top: 30%;
+        font-size: 2rem;
+      }
+    }
+
+    
+    @media only screen and (min-width: 1200px) {
+      #navUL{
+      margin-right: -2rem;
+      }
+      
+      #item1,#item2,#item3,#item4,#item5{
+        font-size: 2rem;
+      }
+    }

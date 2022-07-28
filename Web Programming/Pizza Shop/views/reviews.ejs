@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews</title>
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/reviewsStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Div mainContainer for the background image, copy to other pages -->
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+
+      <!-- Header ends here -->
+      <div class="reviewsMainContainer">
+        <% results.forEach(function(obj) { %>
+        <div class="reviewContainer">
+          <div class="nameAndRatingAndDate">
+            <p class="reviewName"><%= obj.reviewName %></p>
+            <div>
+              <span class="iconify star" data-icon="fa-solid:star"></span>
+              <span class="iconify star" data-icon="fa-solid:star"></span>
+              <span class="iconify star" data-icon="fa-solid:star"></span>
+              <span class="iconify star" data-icon="fa-solid:star"></span>
+              <span class="iconify star" data-icon="fa-solid:star-half"></span>
+            </div>
+            <p class="reviewDate"><%= obj.reviewDate %></p>
+          </div>
+          <p class="reviewDescription">
+            <%= obj.reviewDescription %>
+          </p>
+        </div>
+        <% }); %>
+      </div>
+      <!-- Footer starts here, copy to other pages -->
+      <%- include('partials/footer'); %>
+
+      <!-- Footer ends here  -->
+    </div>
+    <!-- Script for external icons -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    
+  </body>
+</html>

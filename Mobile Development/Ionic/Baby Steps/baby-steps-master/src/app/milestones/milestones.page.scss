@@ -1,0 +1,23 @@
+.female{
+  --background: #FFC0CB ;
+}
+.maleOrother{
+  --background:  #2BACFF;
+}
+p{
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+ion-button{
+  width:95%;
+  background-color: white;
+  color:black;
+}
+
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

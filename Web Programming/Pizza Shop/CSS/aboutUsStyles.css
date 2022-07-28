@@ -1,0 +1,190 @@
+.aboutUsMainContainer{
+  border-radius: 50px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aboutUsSubDivision{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.subDivisionTitle{
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  text-decoration: underline;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.subDivisionDescription{
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 20px;
+}
+
+.subDivisionTextContainer{
+  width: 45%;
+}
+
+.brickOvenImage{
+  width: 45%;
+  margin-left: 100px;
+  border-radius: 30px;
+}
+
+.pizzaMakingVideo{
+  width: 45%;
+  margin-right: 100px;
+}
+
+.carouselContainer{
+  max-width: 45%;
+  margin-left: 100px;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.carouselContainer > img{
+  width: 85%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 40px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutUsMainContainer{
+    width: 85%;
+  }
+  .aboutUsSubDivision{
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    justify-content: initial;
+    margin-bottom: 60px;
+  }
+  .subDivisionTextContainer {
+    width: 100%;
+  }
+  .brickOvenImage{
+    width: 100%;
+    margin-left: 0;
+    border-radius: 30px;
+    margin-top: 20px;
+  }
+  
+  .pizzaMakingVideo{
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  
+  .carouselContainer{
+    max-width: 90%;
+    margin: 20px auto 0;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .aboutUsMainContainer{
+    width: 85%;
+  }
+  .aboutUsSubDivision{
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    justify-content: initial;
+    margin-bottom: 60px;
+  }
+  .subDivisionTextContainer {
+    width: 100%;
+  }
+  .brickOvenImage{
+    width: 80%;
+    margin: 20px auto 0;
+  }
+  
+  .pizzaMakingVideo{
+    width: 80%;
+    margin: 0px auto 20px;
+  }
+  
+  .carouselContainer{
+    max-width: 80%;
+    margin: 20px auto 0;
+  }
+
+  .subDivisionTitle{
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  
+  .subDivisionDescription{
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px){
+  .aboutUsMainContainer{
+    width: 85%;
+  }
+  .aboutUsSubDivision{
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    justify-content: initial;
+    margin-bottom: 60px;
+  }
+  .subDivisionTextContainer {
+    width: 100%;
+  }
+  .brickOvenImage{
+    width: 85%;
+    margin: 20px auto 0;
+  }
+  
+  .pizzaMakingVideo{
+    width: 85%;
+    margin: 0px auto 20px;
+  }
+  
+  .carouselContainer{
+    max-width: 85%;
+    margin: 20px auto 0;
+  }
+
+  .subDivisionTitle{
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .subDivisionDescription{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .aboutUsMainContainer{
+    width: 85%;
+  }
+  .subDivisionTitle{
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .subDivisionDescription{
+    font-size: 23px;
+  }
+}

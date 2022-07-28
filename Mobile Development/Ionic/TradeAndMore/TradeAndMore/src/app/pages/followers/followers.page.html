@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button style="padding: 9px;" color="new" (click)="goToProfile()"><span style="color:white">Back</span></ion-button>
+    <ion-title>Followers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let result of results ">
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start">
+
+          <img src="{{result.photo}}">
+          </ion-avatar>
+        <ion-button fill="clear" (click)="goTo(result.email,result.user_id)">
+        <ion-label style="color: rgb(39, 39, 39);font-size: 14px;" >{{result.first_name}} {{result.last_name}}</ion-label>
+        </ion-button>
+        <ion-button  color="new" *ngIf="check(result.user_id,myFollowers)==='Yes'" #{{result.user_id}} fill="outline" slot="end" (click)="unfollow(result.user_id)" >Unfollow</ion-button>
+        <ion-button  color="new" *ngIf="check(result.user_id,myFollowers)==='No'" #{{result.user_id}} slot="end" (click)="follow(result.user_id)" ><span style="color:white">Follow</span></ion-button>
+
+
+
+      </ion-item>
+
+
+      <ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+
+    </div>
+</ion-content>

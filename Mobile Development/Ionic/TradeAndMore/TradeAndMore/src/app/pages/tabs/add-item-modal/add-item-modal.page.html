@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Post an Item</ion-title>
+    <ion-buttons slot="end">
+    <ion-button (color)="new" (click)="dismissModal()"><span style="color:white;">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="new">
+
+    <div style="width:90%;margin: auto;padding: 7px;margin-top: 30px;background-color: white;padding-bottom: 30px;">
+    <form #form="ngForm"  (ngSubmit)="onSubmit(form)">
+    <div  id="label">
+      <br><br>
+    <ion-label  id="hey" style="margin-left: 30%;"><strong>  Upload a new item</strong></ion-label>
+    <br><br>
+  </div>
+  <ion-item class="rounded">
+    <ion-label class="inlabel" >Item Name</ion-label>
+    <ion-input  [(ngModel)]="item_name" type="name"   [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+
+
+<div class="ion-padding" >
+  <ion-label>Upload Item Image:</ion-label>
+<br><br>
+<input type="file" [(ngModel)]="item_image" (change)="selectedFile($event)" [ngModelOptions]="{standalone: true}">
+
+</div>
+
+  <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select placeholder="Select One"  (ionChange)="getSubCategories($event)" [(ngModel)]="item_category_name"  [ngModelOptions]="{standalone: true}"  >
+       <div *ngFor="let category of categories">
+        <ion-select-option  value="{{category.category_name}}">{{category.category_name}}</ion-select-option>
+      </div>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Subcategory</ion-label>
+    <ion-select placeholder="Select One"   [(ngModel)]="item_subcategory_name" [ngModelOptions]="{standalone: true}"  >
+      <div *ngFor="let subcategory of subcategories">
+      <ion-select-option  value="{{subcategory.subcategory_name}}">{{subcategory.subcategory_name}}</ion-select-option>
+    </div>
+    </ion-select>
+</ion-item>
+<br>
+<ion-item>
+  <ion-label >Description</ion-label>
+  <ion-textarea [(ngModel)]="item_description" [ngModelOptions]="{standalone: true}"
+  aria-placeholder="Please enter a description of your item.">
+  </ion-textarea>
+</ion-item>
+
+<ion-item>
+  <ion-label>Type</ion-label>
+  <ion-select placeholder="Select One"  (ionChange)="selectedType($event)"  [(ngModel)]="item_type" [ngModelOptions]="{standalone: true}">
+    <div *ngFor="let type of types">
+    <ion-select-option value="{{type.type_name}}">{{type.type_name}}</ion-select-option>
+
+
+</div>
+  </ion-select>
+</ion-item>
+<div *ngIf="type_result==1">
+<ion-item class="rounded" >
+  <ion-label class="inlabel" >Price</ion-label>
+  <ion-input [(ngModel)]="item_price"  type="number" [ngModelOptions]="{standalone: true}"></ion-input>
+</ion-item>
+</div>
+
+
+<ion-button class="roundedMore" expand="block" color="new" type="submit" style="width:70%;margin:auto;margin-top: 30px;"><strong>Post new item</strong></ion-button>
+
+</form>
+
+
+</div>
+</ion-content>

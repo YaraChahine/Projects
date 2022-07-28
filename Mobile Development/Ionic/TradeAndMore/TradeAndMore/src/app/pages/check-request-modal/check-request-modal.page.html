@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Check Request</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (color)="new" (click)="dismissModal()"> <span style="color:var(--ion-color-new);" >Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="center "
+    style="width:95%;margin: auto;padding: 7px;margin-top: 30px;background-color: white;padding-bottom: 30px;text-align: center;box-shadow: 3px 3px 5px lightgray;"
+    *ngIf="request_received==1">
+
+    <div *ngFor="let item of items">
+      <div #{{item.item_id}} #{{request.receiver_item_id}} *ngIf="item.item_id==request.receiver_item_id">
+
+
+        <img style="width:40%;height:40%;border-radius:100%;margin-right:20px;" src="{{request.photo}}">
+
+        <div #{{request.sender_item_id}} *ngIf="request.sender_item_id!=null">
+          <p><strong> {{request.first_name}} {{request.last_name}} </strong>wants to trade their
+            "{{request.item_name}}"
+            with your
+            "{{item.item_name}}"
+          </p>
+          <br>
+          <br>
+          <div style="text-align: left;margin-left: 40px;">
+            <strong class="label">Email : </strong> <span>{{request.email}}</span>
+            <br>
+            <strong class="label">Phone Number : </strong> <span>{{request.phone_number}}</span>
+            <br>
+            <strong class="label">Item Name: </strong> <span>{{request.item_name}}</span>
+            <br>
+            <strong class="label">Item Description: </strong> <span>{{request.item_description}}</span>
+            <br>
+            <strong class="label">Item Image: </strong> 
+            <br><br>
+            <img style="width:85%;margin-right:25px;" src="{{request.item_image}}">
+            <br><br>
+            <strong class="label">Request Message: </strong> <span>{{request.request_msg}}</span>
+            <br>
+
+            <strong class="label">Request Date: </strong> <span>{{request.request_date}}</span>
+
+          </div>
+        </div>
+        <div #{{request.sender_item_id}} *ngIf="request.sender_item_id==null&&item.item_type!=5">
+          <p><strong> {{request.first_name}} {{request.last_name}} </strong>wants to purchase your
+
+            "{{item.item_name}}"
+          </p>
+          <div style="text-align: left;margin-left: 40px;">
+            <strong class="label">Email : </strong> <span>{{request.email}}</span>
+            <br><br>
+            <strong class="label">Phone Number : </strong> <span>{{request.phone_number}}</span>
+            <br><br>
+            <strong class="label">Request Message: </strong> <span>{{request.request_msg}}</span>
+            <br>
+            <strong class="label">Request Date: </strong> <span>{{request.request_date}}</span>
+
+  
+          </div>
+        </div>
+  
+        <div #{{request.sender_item_id}} *ngIf="request.sender_item_id==null&&item.item_type==5">
+          <p><strong> {{request.first_name}} {{request.last_name}} </strong>is requesting your
+            "{{item.item_name}}"
+          </p>
+          <div style="text-align: left;margin-left: 40px;">
+            <strong class="label">Email : </strong> <span>{{request.email}}</span>
+            <br><br>
+            <strong class="label">Phone Number : </strong> <span>{{request.phone_number}}</span>
+            <br><br>
+            <strong class="label">Request Message: </strong> <span>{{request.request_msg}}</span>
+            <br>
+            <br>
+            <strong class="label">Request Date: </strong> <span>{{request.request_date}}</span>
+            <br>
+
+  
+          </div>
+        </div>
+
+      
+      </div>
+      
+    </div>
+    <ion-item style="margin-left:20px;padding-left: 10px;">
+    <ion-button class="roundedMore" expand="block" color="new"
+    style="width:44%;margin-top: 30px;color:white;height: 40px;" ><strong style="color:white;font-size: 15px;" (click)="openReviewModal()">Accept</strong></ion-button>
+    <ion-button class="roundedMore" expand="block" color="danger"
+    style="width:44%;margin-top: 30px;color:white;height: 40px;" ><strong style="color:white;font-size: 15px;" (click)="RejectOffer()">Reject</strong></ion-button>
+   
+  </ion-item>
+  </div>
+</ion-content>

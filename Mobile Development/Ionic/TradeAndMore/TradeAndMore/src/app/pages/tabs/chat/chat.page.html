@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chats</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+<div *ngFor="let resultx of results ">
+  <ion-item *ngIf="check(resultx.id,logged_in_id)==='Yes'" (click)="goToChats(resultx.id,resultx.email)">
+    <ion-thumbnail slot="start">
+      <img src="{{resultx.photo}}">
+    </ion-thumbnail>
+    <ion-label>{{resultx.first_name}} {{resultx.last_name}}</ion-label>
+  </ion-item>
+       </div>
+      <div *ngFor="let resulty of results2 ">
+
+        <ion-item *ngIf="check(logged_in_id,resulty.id)==='Yes' && check2(resulty.id,results)==='No'" (click)="goToChats(resulty.id,resulty.email)">
+          <ion-thumbnail slot="start">
+            <img src="{{resulty.photo}}">
+          </ion-thumbnail>
+          <ion-label>{{resulty.first_name}} {{resulty.last_name}}</ion-label>
+        </ion-item>
+
+             </div>
+    </ion-content>

@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Request Item</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="new" (click)="dismissModal()">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="center">
+    <div  style="text-align:center;font-size: 30px;color: var(--ion-color-new);margin-bottom: 30px;">
+      Request Item
+    </div>
+    <div *ngIf="item_received==1 && receiver_item[0].item_type==1 ">
+
+
+      <div style="margin-left:6px;">
+        <br>
+        <span>Select the item you would like to trade</span>
+        <br>
+      </div>
+      <br>
+      <ion-item>
+        <ion-label>Item</ion-label>
+        <ion-select placeholder="Select One" (ionChange)="selectedType($event)" [(ngModel)]="item_name"
+          [ngModelOptions]="{standalone: true}">
+          <div *ngFor="let item of items">
+            <ion-select-option value="{{item.item_name}}">{{item.item_name}}</ion-select-option>
+          </div>
+        </ion-select>
+      </ion-item>
+      <br>
+    </div>
+    <div *ngIf="item_received==1 && receiver_item[0].item_type==2 ">
+
+    </div>
+    <div *ngIf="item_received==1 && receiver_item[0].item_type==4">
+      <ion-item>
+        <ion-label>Type</ion-label>
+        <ion-select placeholder="Select One" (ionChange)="selectedType($event)" [(ngModel)]="item_name"
+          [ngModelOptions]="{standalone: true}">
+          <div *ngFor="let item of items">
+            <ion-select-option value="{{item.item_name}}">{{item.item_name}}</ion-select-option>
+          </div>
+        </ion-select>
+      </ion-item>
+      <br>
+      <div style="margin-left:6px;">Enter your suggested price</div>
+      <br>
+      <ion-item>
+        <ion-label>Price:</ion-label>
+        <ion-input type="number" [(ngModel)]="requested_item_price"></ion-input>
+      </ion-item>
+    </div>
+
+
+
+    <div *ngIf="item_received==1 && receiver_item[0].item_type==3">
+      <ion-item>
+        <ion-label>Type</ion-label>
+
+        <ion-select placeholder="Select One" [(ngModel)]="request_type" [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="Trade">Trade</ion-select-option>
+          <ion-select-option value="Buy">Buy</ion-select-option>
+        </ion-select>
+
+      </ion-item>
+
+
+      <div *ngIf="request_type=='Trade'">
+        <ion-item>
+
+          <ion-select placeholder="Select One" (ionChange)="selectedType($event)" [(ngModel)]="item_name"
+            [ngModelOptions]="{standalone: true}">
+            <div *ngFor="let item of items">
+              <ion-select-option value="{{item.item_name}}">{{item.item_name}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-left:6px;" *ngIf="user_info_received==1">
+      <br>
+      <span>Send a message to {{user_info.first_name}} {{user_info.last_name}}</span>
+      <br>
+      
+    </div>
+    <br>
+    <ion-item>
+
+      <div>
+        <textarea [(ngModel)]="text_message" placeholder="Write a message"></textarea>
+      </div>
+      <br><br>
+    </ion-item>
+    <div *ngIf="item_result==1">
+      <img style="width:100%;height:130px;border: 3px;border-color: black;box-shadow: 2px 2px 2px gray;"
+        src="{{selected_item.item_image}}">
+    </div>
+    <br><br>
+    <ion-button style="width:50%;margin: auto;margin-left: 25%;" color="new" (click)="sendRequest()">Send Request
+    </ion-button>
+    <br>
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>receipts-menu</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (color)="new" (click)="back()"><span style="color:var(--ion-color-new);">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color:var(--ion-color-new); width:100%;text-align: center;padding: 10px;margin-bottom: 40px;">
+    
+  <span style="color:white; font-weight: 400;font-size: 24px;">  Receipts</span>
+  </div>
+  <ion-list *ngFor="let receipt of receipts">
+
+
+    <ion-item (click)="openReceiptModal(receipt)" *ngIf="receipt.sender_user_id==logged_in_id">
+      <ion-avatar slot="start">
+        <img src="{{receipt.receiver_photo}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{receipt.receiver_name}}</h2>
+        <h3>{{receipt.exchange_type_name}}</h3>
+        <p>{{receipt.receipt_date}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="openReceiptModal(receipt)" *ngIf="receipt.receiver_user_id==logged_in_id">
+      <ion-avatar slot="start">
+        <img src="{{receipt.sender_photo}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{receipt.sender_name}}</h2>
+        <h3>{{receipt.exchange_type_name}}</h3>
+        <p>{{receipt.receipt_date}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

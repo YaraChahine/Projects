@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Check Item</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div
+    style="width:100%;margin: auto;padding: 7px;margin-top: 30px;background-color: white;padding-bottom: 30px;text-align: center;">
+
+    <ion-label style="font-size:19px;margin-top: 40px;width: 40%;margin: auto;" color="new"><strong class="label">Item
+        Details</strong></ion-label>
+
+    <br><br>
+    <div
+      style="width:100%;margin: auto;padding: 7px;margin-top: 30px;background-color: white;padding-bottom: 30px;text-align: center;box-shadow: 3px 3px 5px lightgray;">
+      <ion-item>
+        <img src="{{item_image      }}">
+      </ion-item>
+      <br>
+      <ion-item>
+        <strong class="label">User Name: </strong>{{users[0].first_name}} {{users[0].last_name}}
+      </ion-item>
+
+      <ion-item>
+        <strong class="label">Item Name: </strong>{{item_name}}
+      </ion-item>
+      <ion-item>
+        <strong class="label">Item Category: </strong>{{category_name}}
+      </ion-item>
+      <ion-item>
+        <strong class="label">Item Subcategory: </strong>{{subcategory_name}}
+      </ion-item>
+      <ion-item>
+        <strong class="label">Item Description: </strong>{{item_description}}
+      </ion-item>
+
+      <ion-item>
+        <strong class="label">Item Price: </strong>
+        {{item_price }}
+      </ion-item>
+      <ion-item>
+        <strong class="label">Time Uploaded: </strong>
+        {{date_uploaded }}
+      </ion-item>
+      <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate *ngIf="id != user_id">
+        <ion-item  class="rounded">
+          <ion-label class="inlabel" position="stacked">Price</ion-label>
+          <ion-input type="number" formControlName="Price"></ion-input>
+        </ion-item>
+        <div class="errorLabel">
+        <ion-label *ngIf="isSubmitted && errorControl.Price.errors?.required">
+          Number is required.
+        </ion-label>
+      </div>
+      <div class="errorLabel">
+        <ion-label *ngIf="isSubmitted && errorControl.Price.errors?.min">
+          Number greater than last bid/initial price is required.
+        </ion-label>
+      </div>
+
+      <ion-button  type="submit" class="roundedMore" expand="block" color="new"
+        style="width:70%;margin:auto;margin-top: 30px;color:white"><strong>Submit Bid</strong></ion-button>
+
+      </form>
+      <div *ngIf="id == user_id">
+        <div  *ngFor="let bid of bids ">
+          <ion-item>
+
+
+          <p style="text-align: center; width: 100%;" class="label">{{bid.first_name}} {{bid.last_name}} {{bid.item_price}} {{bid.date_uploaded}}</p>
+        </ion-item>
+      </div>
+
+        </div>
+        <div *ngIf="id != user_id">
+            <ion-item>
+            <p style="text-align: center; width: 100%;" *ngIf="bids[0]?.item_price" class="label">Last bid:  {{bids[0].item_price}} {{bids[0].date_uploaded}}</p>
+            <p style="text-align: center; width: 100%;" *ngIf="!bids[0]?.item_price" class="label">No bids yet</p>
+          </ion-item>
+      </div>
+  </div>
+</div>
+
+</ion-content>

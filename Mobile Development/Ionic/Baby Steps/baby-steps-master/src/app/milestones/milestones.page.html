@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>  <div class="center">
+      <img src="../../assets/nameOnly.png">
+    </div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="child_gender==='female'" class="female">
+  <p>
+  {{child_name}}'s Milestones
+</p>
+<div class="signup2">
+  <ion-button class="myButtons" fill="clear" (click)="getMem(5)"><img class = "icon" src="../../assets/Chat.png"><strong>First Word</strong><img class = "icon" src="../../assets/Chat.png"></ion-button>
+  <ion-button class="myButtons" fill="clear" (click)="getMem(6)"><img class = "icon" src="../../assets/Footprints.png"><strong>First Time Walking</strong><img class = "icon" src="../../assets/Footprints.png"></ion-button>
+  <ion-button class="myButtons" fill="clear" (click)="getMem(7)"><img class = "icon" src="../../assets/School.png"><strong>First Day At School</strong><img class = "icon" src="../../assets/School.png"></ion-button>
+  <ion-button class="myButtons" fill="clear" (click)="getMem(8)"><img class = "icon" src="../../assets/Graduation.png"><strong>Graduation</strong><img class = "icon" src="../../assets/Graduation.png"></ion-button>
+</div>
+</ion-content>
+<ion-content *ngIf="child_gender==='male'" class="maleOrother">
+  <p>
+    {{child_name}}'s Milestones
+  </p>
+  <div class="signup2">
+    <ion-button class="myButtons" fill="clear" (click)="getMem(5)"><img class = "icon" src="../../assets/Chat.png"><strong>First Word</strong><img class = "icon" src="../../assets/Chat.png"></ion-button>
+    <ion-button class="myButtons" fill="clear" (click)="getMem(6)"><img class = "icon" src="../../assets/Footprints.png"><strong>First Time Walking</strong><img class = "icon" src="../../assets/Footprints.png"></ion-button>
+    <ion-button class="myButtons" fill="clear" (click)="getMem(7)"><img class = "icon" src="../../assets/School.png"><strong>First Day At School</strong><img class = "icon" src="../../assets/School.png"></ion-button>
+    <ion-button class="myButtons" fill="clear" (click)="getMem(8)"><img class = "icon" src="../../assets/Graduation.png"><strong>Graduation</strong><img class = "icon" src="../../assets/Graduation.png"></ion-button>
+  </div>
+  </ion-content>
+  <ion-content *ngIf="child_gender==='other'" class="maleOrother">
+    <p>
+      {{child_name}}'s Milestones
+    </p>
+    <div class="signup2">
+      <ion-button class="myButtons" fill="clear" (click)="getMem(5)"><img class = "icon" src="../../assets/Chat.png"><strong>First Word</strong><img class = "icon" src="../../assets/Chat.png"></ion-button>
+      <ion-button class="myButtons" fill="clear" (click)="getMem(6)"><img class = "icon" src="../../assets/Footprints.png"><strong>First Time Walking</strong><img class = "icon" src="../../assets/Footprints.png"></ion-button>
+      <ion-button class="myButtons" fill="clear" (click)="getMem(7)"><img class = "icon" src="../../assets/School.png"><strong>First Day At School</strong><img class = "icon" src="../../assets/School.png"></ion-button>
+      <ion-button class="myButtons" fill="clear" (click)="getMem(8)"><img class = "icon" src="../../assets/Graduation.png"><strong>Graduation</strong><img class = "icon" src="../../assets/Graduation.png"></ion-button>
+    </div>
+    </ion-content>

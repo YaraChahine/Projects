@@ -1,0 +1,234 @@
+.menuMainContainer {
+  border-radius: 50px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.35s ease-in-out;
+  flex-wrap: wrap;
+}
+
+.menuMainContainer:hover {
+  transition: all 0.35s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pizzaContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSide {
+  padding: 20px 0;
+  min-height: 110px;
+}
+
+.pizzaContainer .rightSide {
+  /* width: 100px; */
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  margin-left: 0px;
+}
+
+.pizzaContainer:hover .rightSide {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+  margin-left: 40px;
+}
+
+.imgAndPriceContainer {
+  position: relative;
+  text-align: center;
+}
+
+.pizzaContainer .pizzaImage {
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  width: 320px;
+  height: 280px;
+}
+
+.pizzaContainer:hover .pizzaImage {
+  transition: all 0.5s ease-in-out;
+  opacity: 0.5;
+  background-color: black;
+}
+
+.pizzaContainer .pizzaPrice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: lightgray;
+  font-size: 0px;
+  font-family: 'Dancing Script', cursive;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.pizzaContainer:hover .pizzaPrice {
+  visibility: visible;
+  font-size: 40px;
+  transition-delay: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+
+.pizzaContainer .pizzaRating {
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  text-align: center;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+.pizzaContainer:hover .pizzaRating {
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.5s;
+  color: white;
+  text-align: center;
+  font-size: 26px;
+  margin-top: 10px;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+.pizzaContainer .pizzaName {
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+.pizzaContainer:hover .pizzaName {
+  color: white;
+  font-size: 40px;
+  font-family: 'Archivo Narrow', sans-serif;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.pizzaContainer .pizzaDescription {
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+.pizzaContainer:hover .pizzaDescription {
+  color: white;
+  font-size: 26px;
+  margin-top: 20px;
+  font-family: 'Archivo Narrow', sans-serif;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+  .menuMainContainer {
+    width: 85%;
+  }
+
+  .pizzaContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .pizzaContainer:hover .rightSide {
+    margin-left: 20px;
+  }
+  
+  .pizzaContainer:hover .pizzaRating {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .pizzaContainer:hover .pizzaName {
+    font-size: 36px;
+  }
+  
+  .pizzaContainer:hover .pizzaDescription {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .menuMainContainer {
+    width: 85%;
+  }
+
+  .pizzaContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .pizzaContainer:hover .rightSide {
+    margin-left: 20px;
+  }
+  
+  .pizzaContainer:hover .pizzaRating {
+    font-size: 28px;
+    margin-top: 10px;
+  }
+  
+  .pizzaContainer:hover .pizzaName {
+    font-size: 40px;
+  }
+  
+  .pizzaContainer:hover .pizzaDescription {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .menuMainContainer {
+    width: 85%;
+  }
+
+  .pizzaContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .pizzaContainer:hover .rightSide {
+    margin-left: 20px;
+  }
+  
+  .pizzaContainer:hover .pizzaRating {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+  
+  .pizzaContainer:hover .pizzaName {
+    font-size: 44px;
+  }
+  
+  .pizzaContainer:hover .pizzaDescription {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .menuMainContainer {
+    width: 85%;
+  }
+}

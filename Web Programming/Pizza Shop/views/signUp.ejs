@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobs</title>
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/signUpStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Div mainContainer for the background image, copy to other pages -->
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+
+      <!-- Header ends here -->
+      <form action="http://127.0.0.1:8081/processSignUpForm" method="post">
+      <div class="pageMainContainer">
+        <div class="sectionContainer">
+          <h2 class="containerTitle">
+            Please fill the below information to sign up.
+        </h2>
+
+            <input
+              type="text"
+              name="Email"
+              placeholder="Email"
+              class="inputStyle"
+              id="email"
+            />
+            <p id="emailError" class="error"></p>
+
+            <input
+              type="text"
+              name="Username"
+              placeholder="Username"
+              class="inputStyle"
+              id="username"
+            />
+            <p id="usernameError" class="error"></p>
+
+            <input
+              type="password"
+              name="Password"
+              placeholder="Password"
+              class="inputStyle"
+              id="password"
+            />
+            <p id="passwordError" class="error"></p>
+            <p id="formError" class="error"></p>
+
+            <h2 class="containerTitle">
+              Already have an account? <a href="../signIn.ejs">Sign in.</a>
+            </h2>
+
+            <button class="orderButton" type="submit" id="signupButton">
+              <span
+                class="iconify checkmarkRotate"
+                data-icon="eva:checkmark-outline"
+              ></span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Footer starts here, copy to other pages -->
+      <%- include('partials/footer'); %>
+
+      <!-- Footer ends here  -->
+    </div>
+    <script src="../JS/signupJS.js"></script>
+    <!-- Script for external icons -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </body>
+</html>

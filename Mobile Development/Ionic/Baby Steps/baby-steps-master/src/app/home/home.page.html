@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>  <div class="center">
+      <img src="../../assets/nameOnly.png">
+    </div></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+     <ion-button class="buttons" expand="block" (click)="addChild()"><strong>Add Child</strong></ion-button>
+  </ion-card>
+
+  <ion-card *ngFor="let childx of child">
+    <ion-button *ngIf="childx.child_gender==='male'" class="buttonsMale" expand="block" (click)="checkChild1(childx.child_id,childx.child_name,childx.child_gender)"><strong>{{childx.child_name}}</strong></ion-button>
+    <ion-button *ngIf="childx.child_gender==='female'" class="buttons" expand="block" (click)="checkChild1(childx.child_id,childx.child_name,childx.child_gender)"><strong>{{childx.child_name}}</strong></ion-button>
+    <ion-button *ngIf="childx.child_gender==='other'" class="buttonsMale" expand="block" (click)="checkChild1(childx.child_id,childx.child_name,childx.child_gender)"><strong>{{childx.child_name}}</strong></ion-button>
+
+
+  </ion-card>
+
+
+</ion-content>

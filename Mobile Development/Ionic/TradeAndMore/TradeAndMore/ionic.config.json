@@ -1,0 +1,8 @@
+{
+  "name": "TradeAndMoree",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Biddings</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openModal()" fill="clear" color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+<ion-content>
+  <p style="text-align: center; width: 100%;">My Items</p>
+  <div *ngFor="let item of items ">
+
+    <ion-item *ngIf="item.is_active==1">
+        <ion-thumbnail slot="start">
+          <img (click)="openItemModal(item)" src="{{item.item_image}}">
+        </ion-thumbnail>
+        <ion-label  class="myLabel">{{item.item_name}} </ion-label>
+    <ion-label class="myLabel">{{updateCountdown(item.date_uploaded,item.item_id)}}</ion-label>
+  </ion-item>
+
+  </div>
+  <p style="text-align: center; width: 100%;">My bids</p>
+ <div *ngFor="let myBidss of myBids ">
+
+     <ion-item *ngIf="myBidss.is_active==1">
+         <ion-thumbnail slot="start">
+          <img (click)="openItemModal(myBidss)" src="{{myBidss.item_image}}">
+        </ion-thumbnail>
+        <ion-label  class="myLabel">{{myBidss.item_name}} </ion-label>
+    <ion-label class="myLabel">{{updateCountdown(myBidss.date_uploaded,myBidss.item_id)}}</ion-label>
+  </ion-item>
+
+  </div>
+  <p style="text-align: center; width: 100%;">My followings' bids</p>
+  <div *ngFor="let otherItem of otherItems ">
+
+    <ion-item *ngIf="otherItem.is_active==1">
+        <ion-thumbnail slot="start">
+          <img (click)="openItemModal(otherItem)" src="{{otherItem.item_image}}">
+        </ion-thumbnail>
+        <ion-label  class="myLabel">{{otherItem.item_name}} </ion-label>
+    <ion-label class="myLabel">{{updateCountdown(otherItem.date_uploaded,otherItem.item_id)}}</ion-label>
+  </ion-item>
+
+  </div>
+
+</ion-content>
+<script>
+</script>

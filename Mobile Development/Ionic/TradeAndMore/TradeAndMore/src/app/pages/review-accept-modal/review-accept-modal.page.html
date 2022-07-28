@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Write a review</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (color)="new" (click)="dismissModal()"><span style="color:white;">Back</span></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="center">
+  <div *ngIf="request.sender_user_id!=id">
+  <div style="font-size:20px;">Write a review about <span style="color:var(--ion-color-new);">{{request.first_name}} {{request.last_name}}!</span>
+  </div>
+  <textarea [(ngModel)]="review"  class="input" placeholder="hey"></textarea>
+
+  
+  <div>Please rate your experience with {{request.first_name}} {{request.last_name}}</div>
+  <ion-item class="select-menu">
+    <ion-label>Rating</ion-label>
+    <ion-select placeholder="Select One"   [(ngModel)]="rating"  [ngModelOptions]="{standalone: true}"  >
+      <ion-select-option  >1</ion-select-option>
+      <ion-select-option  >2</ion-select-option>
+      <ion-select-option  >3</ion-select-option>
+      <ion-select-option  >4</ion-select-option>
+      <ion-select-option  >5</ion-select-option>
+
+    
+    </ion-select>
+</ion-item>
+
+<ion-item >
+  <ion-button class="roundedMore" expand="block" color="new"
+  style="width:44%;margin-top: 30px;color:white;height: 40px;margin-left: 23%;" ><strong style="color:white;font-size: 15px;" (click)="addFeedback()">Accept</strong></ion-button>
+ </ion-item>
+ </div>
+ 
+ <div *ngIf="request.sender_user_id==id">
+  <div style="font-size:20px;">Write a review about <span style="color:var(--ion-color-new);">{{user.first_name}} {{user.last_name}}!</span>
+  </div>
+  <textarea [(ngModel)]="review"  class="input" placeholder="hey"></textarea>
+
+  
+  <div>Please rate your experience with {{user.first_name}} {{user.last_name}}</div>
+  <ion-item class="select-menu">
+    <ion-label>Rating</ion-label>
+    <ion-select placeholder="Select One"   [(ngModel)]="rating"  [ngModelOptions]="{standalone: true}"  >
+      <ion-select-option  >1</ion-select-option>
+      <ion-select-option  >2</ion-select-option>
+      <ion-select-option  >3</ion-select-option>
+      <ion-select-option  >4</ion-select-option>
+      <ion-select-option  >5</ion-select-option>
+
+    
+    </ion-select>
+</ion-item>
+
+<ion-item >
+  <ion-button class="roundedMore" expand="block" color="new"
+  style="width:44%;margin-top: 30px;color:white;height: 40px;margin-left: 23%;" ><strong style="color:white;font-size: 15px;" (click)="addFeedback2()">Accept</strong></ion-button>
+ </ion-item>
+ </div>
+
+
+</div>
+</ion-content>

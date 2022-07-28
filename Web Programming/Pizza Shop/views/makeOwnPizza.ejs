@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/makeOwnPizzaStyles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Make your own Pizza</title>
+  </head>
+
+  <body>
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+
+      <div class="mainCreationContainer">
+        <h1>Create your own pizza!</h1>
+        <br />
+
+        <div class="pizzaChoices">
+          <form name="pizzaForm" id="pizzaForm">
+            <label for="pizzaName">Name your pizza!</label><br />
+            <input type="text" id="pizzaName" name="pizzaName" />
+            <p id="pizzaNameError" class="error"></p>
+            <br />
+
+            Size
+            <select name="pizzaSize" id="pizzaSize">
+              <br />
+              <option value="" disabled selected>Choose the size!</option>
+              <option value="smallPizza">Small - $8</option>
+              <option value="mediumPizza">Medium - $12</option>
+              <option value="largePizza">Large - $15</option>
+              <option value="xLargePizza">X-Large - $25</option>
+            </select>
+            <p id="pizzaSizeError" class="error"></p>
+            <br />
+
+            Dough
+            <select name="doughType" id="doughType">
+              <option value="" disabled selected>Choose your dough!</option>
+              <option value="veganDough">Vegan-based dough - $5</option>
+              <option value="regularDough">Regular dough - $0</option>
+              <option value="glutenFreeDough">Gluten Free - $5</option>
+              <option value="wholeWheatDough">Whole-wheat - $5</option>
+            </select>
+            <p id="doughTypeError" class="error"></p>
+            <br />
+
+            Crust
+            <select name="crustType" id="crustType">
+              <option value="" disabled selected>Choose your crust!</option>
+              <option value="thinCrust">Thin Crust - $4</option>
+              <option value="normalCrust">Normal Crust - $2</option>
+              <option value="thickCrust">Thick Crust - $6</option>
+              <option value="stuffedCrust">Stuffed Crust - $5</option>
+              <option value="newYorkStyleCrust">New York Style - $8</option>
+              <option value="chicagoDeepDishCrust">Chicago Deep-Dish - $8</option>
+            </select>
+            <p id="crustTypeError" class="error"></p>
+            <br />
+
+              Toppings
+              <select name="topChoices" id="topChoices" multiple>
+                <option value="" disabled>
+                  Choose your toppings!
+                </option>
+                <option value="olives">Olives - $2</option>
+                <option value="mushroom">Mushroom - $2</option>
+                <option value="greenPeppers">Green peppers - $2</option>
+                <option value="crispySageLeaves">Crispy Sage leaves - $3</option>
+                <option value="onion">Onion - $2</option>
+                <option value="extraCheese">Extra Cheese - $4</option>
+                <option value="asparagus">Asparagus - $3</option>
+
+                <option value="epperoni">Pepperoni - $1</option>
+                <option value="sausage">Sausage - $3</option>
+                <option value="pancetta">Pancetta - $3</option>
+                <option value="chicken">Chicken - $2</option>
+                <option value="anchovies">Anchovies - $2</option>
+                <option value="prosciutto">Prosciutto - $5</option>
+
+                <option value="BBQ">BBQ - $1</option>
+                <option value="ranch">Ranch - $1</option>
+                <option value="blueCheese">Blue Cheese - $3</option>
+              </select>
+              <p id="topChoicesError" class="error"></p>
+            <br />
+            <button id="btn-totalPrice" class="addToppingsBtn" type="button">
+              Calculate
+            </button>
+            <p class="priceText" id="priceText"></p>
+            <br />
+            <div class="submit">
+              <input type="submit" value="Submit" id="submitPizza"/>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer starts here  -->
+
+      <%- include('partials/footer'); %>
+
+      <!-- Footer ends here  -->
+    </div>
+    <script src="../JS/MYOPDOMScript.js"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </body>
+</html>

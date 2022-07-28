@@ -1,0 +1,69 @@
+img {
+    float: left;
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+    margin-left: 25%;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+  table {
+    counter-reset: position;
+    width: 75%;
+  }
+  
+  table td:first-child:before {
+    counter-increment: position;
+    content: counter(position);
+  }
+  td {
+    height: 80px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  #piechart{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+
+@media(max-width: 670px) {
+    img {
+        margin: 0%;
+
+        }
+}
+
+@media only screen and (min-width: 670px) {
+    img {
+        margin-right: 10%;
+        margin-left: 10%;
+
+        }
+  }
+
+@media only screen and (min-width: 900px) {
+    img {
+        margin-right: 10%;
+        margin-left: 10%;
+
+        }
+  }
+
+  @media only screen and (min-width: 992px) {
+    img {
+        margin-left: 20%;
+        }
+
+}
+    @media only screen and (min-width: 1200px) {
+        img {
+        margin-left: 25%;
+        }
+    }

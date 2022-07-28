@@ -1,0 +1,158 @@
+nav{
+    padding-top: 1%;
+    background-color:rgb(57, 62, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3rem;
+    list-style-type: none;
+}
+#logo{
+    height:20%;
+    width: auto;
+}
+li{
+    margin: 1rem;
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: orange;
+}
+  
+a:active{
+    background-color: white;
+}
+#item2{
+    text-decoration: underline;
+}
+p{
+  margin-top: 0;
+  background-color: rgb(102, 107, 94);
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 0;
+  color: white;
+
+}
+img{
+  height: auto;
+  width: 100%;
+  margin-bottom: -0.4%;
+
+}
+div{
+  animation-timing-function: ease;
+  animation-name: animation;
+  animation-duration: 1s;
+}
+footer{
+  background-color:rgb(57, 62, 70);
+  width: 100%;
+  padding-top: 2%;
+}
+#footer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  font-size: 2rem;
+  color:white;
+}
+#footerText{
+  background-color:rgb(57, 62, 70);
+  font-size: 1rem;
+  color:white;
+  text-align: center;
+}
+@keyframes animation{
+  0% {
+      transform: translateY(250%); /*placing it much below it's correct location to allow the use of animations*/
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+@media(max-width: 600px) {
+    /*same as the default case above, as I started with the smallest device and gradually did the rest*/
+}
+@media only screen and (min-width: 600px) {
+    nav{
+      flex-direction: row;
+      height: 20rem;
+    }
+    ul{
+      display: grid;
+    }
+    #item5{
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      text-align: center;
+    }
+    #logo{
+      height:45%;
+    }
+    li{
+      font-size: 1.8rem;
+    }
+  }
+
+@media only screen and (min-width: 768px) {
+    nav{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 8rem;
+      
+    }
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-right: 2rem;
+    }
+    
+    li{
+      font-size: 1.6rem;
+    }
+  
+    #logo{
+      height:90%;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    ul{
+      margin-right: 1.5rem;
+      padding-right: 1.8rem;
+    }
+
+  
+    li{
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media only screen and (min-width: 1200px) {
+      ul{
+      margin-right: -2rem;
+      }
+      
+      li{
+        font-size: 2rem;
+      }
+    }

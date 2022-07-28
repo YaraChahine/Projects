@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="../CSS/common.css" />
+    <link rel="stylesheet" href="../CSS/aboutUsStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Div mainContainer for the background image, copy to other pages -->
+    <div class="mainContainer">
+      <!-- Header starts here, copy to other pages -->
+      <%- include('partials/header'); %>
+
+      <!-- Header ends here -->
+      <div class="aboutUsMainContainer">
+        <div class="aboutUsSubDivision">
+          <div class="subDivisionTextContainer">
+            <h2 class="subDivisionTitle">How It All Began</h2>
+            <p class="subDivisionDescription">
+              A few decades ago, two friends grew up in Italy with a great
+              passion for pizza. They wanted to show the world how great
+              authentic pizza can be. They decided to move from Italy to Lebanon
+              in hopes of spreading their love for pizza. They worked various
+              jobs for years, and in 1980 finally managed to open their very own
+              restaurant: The Corner Pizzeria.
+              <br /><br />
+              Dedicated to serving only the best pizza, they kept everything
+              authentic, just like how it is in their family back in Italy. They
+              built their firewood brick oven, brick by brick to always remind
+              them of their home. They also kept their recipes the same as their
+              family's, which have been passed down for many generations.
+            </p>
+          </div>
+          <img
+            src="../Media/Main images/BrickOven.jpg"
+            alt=""
+            class="brickOvenImage"
+          />
+        </div>
+        <div class="aboutUsSubDivision">
+          <video autoplay muted loop class="pizzaMakingVideo">
+            <source src="../Media/Pizza making video.mp4" />
+          </video>
+          <div class="subDivisionTextContainer">
+            <h2 class="subDivisionTitle">Our Ingredients</h2>
+            <p class="subDivisionDescription">
+              All our ingredients are guaranteed to be fresh and made from
+              scratch in our kitchen for our customers. Our flour is sourced
+              from a company back in Italy to guarantee the best pizza dough.
+              All our vegetables come from a local farm that is responsible for
+              producing the best vegetables in Lebanon. We also raise our own
+              animals to guarantee that the meat is always fresh and that the
+              animals are taken care of properly. We also make all of our sauces
+              from scratch in the kitchen.
+              <br /><br />
+              We guarantee the best, for the best.
+            </p>
+          </div>
+        </div>
+        <div class="aboutUsSubDivision">
+          <div class="subDivisionTextContainer">
+            <h2 class="subDivisionTitle">Where we are now</h2>
+            <p class="subDivisionDescription">
+              After decades of hardwork and dedication, we are proud to say that
+              we have reached the status of being the best pizzeria in Lebanon.
+              <br /><br />
+              People from all around the world come to Lebanon just to try our
+              pizzas. We've had a lot of famous people visit us. Some of them
+              are: Gordon Ramsay, Joe Bastianich, and Clare Smyth. Everyone
+              we've ever had agreed on one thing: We are the best place for
+              authentic delicious pizzas in Lebanon.
+              <br /><br />
+              Our mission will forever stay the same: Spread our love for pizza
+              with fresh, authentic, and delicious pizzas that will make you keep
+              coming back for more.
+            </p>
+          </div>
+          <div class="carouselContainer">
+            <img src="../Media/Chefs/GordonRamsay.jpg" alt="" />
+            <img src="../Media/Chefs/JamieOliver.jpg" alt="" />
+            <img src="../Media/Chefs/GuyFieri.jpg" alt="" />
+            <img src="../Media/Chefs/ClareSmyth.jpg" alt="" />
+            <img src="../Media/Chefs/GrahamElliot.jpg" alt="" />
+            <img src="../Media/Chefs/JoeBastianich.jpg" alt="" />
+            <img src="../Media/Chefs/CatCora.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- Footer starts here, copy to other pages -->
+      <%- include('partials/footer'); %>
+
+      <!-- Footer ends here  -->
+    </div>
+    <script src="../twitterfetchfollowers.js"></script>
+    <!-- <script data-main="../twitterfetchfollowers.js" src="../require.js"></script> -->
+    <!-- Script for external icons -->
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </body>
+</html>

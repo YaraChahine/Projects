@@ -1,0 +1,37 @@
+.rounded{
+    width: 70%;
+    height: 40px;
+    padding-bottom:30px;
+    padding-right: 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5px;
+ 
+      box-shadow: 3px 3px 3px rgb(166, 166, 166);
+  }
+  
+  .inlabel {
+    color :  #aaaaaa;
+  }
+
+  .flex-box{
+     display: flex;
+     flex-direction:row;
+  }
+
+  ion-icon{
+    color: var(--ion-color-new);
+    
+}
+
+
+
+ion-segment-button{
+  --color-hover:var(--ion-color-new);
+  --color-checked: var(--ion-color-new);
+  --color: var(--ion-color-medium);
+
+
+}
