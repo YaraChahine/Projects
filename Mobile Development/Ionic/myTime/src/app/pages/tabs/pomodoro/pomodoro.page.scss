@@ -1,0 +1,59 @@
+ion-content {
+    --background: none;
+    background-image: url('./../../../../assets/imgs/bg2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+.t1{
+    color:white;
+    font-size: 40px;
+}
+
+.t2{
+  color: var(--ion-color-purple);
+  font-weight: 900;
+  font-size: 40px;
+
+  text-shadow: 2px 2px 2px gray;
+
+
+}
+
+
+.center{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:1%;
+    
+
+  }
+  .errorLabel{
+    color: red;
+    font-size: 0.8rem;
+    margin-left: 10%;
+    margin-right: 10%;
+  
+  }
+
+  .add-button {
+      margin-top: -20px;
+
+      span {
+          color: white;
+          font-weight: 500;
+      }
+  }
+
+
+  .goal-card {
+    width: 100%;
+  }

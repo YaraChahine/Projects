@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Timer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <p class="t1">Your <span><strong class="t2">Timer</strong></span></p>
+
+
+    <div class="flexbox">
+      <input [(ngModel)]="hours" type="number" min="0" max="60" class="flex-item">
+      <input [(ngModel)]="minutes" type="number" min="0" max="60" class="flex-item">
+      <input [(ngModel)]="seconds" type="number" min="0" max="60" class="flex-item">
+
+    </div>
+    <br><br>
+
+
+    <p class="time">{{timer()}}</p>
+
+
+    <div class="flexbox2">
+      <ion-button color="new" class="flex-item2" (click)="startTimer()">
+      <span>Play</span>
+      </ion-button>
+
+      <div *ngIf="paused===false">
+        <ion-button color="new" class="flex-item2" (click)="pause()">
+          <span>Pause</span>
+        </ion-button>
+      </div>
+      <div *ngIf="paused===true">
+        <ion-button color="new" class="flex-item2" (click)="resume()">
+          <span>Resume</span>
+        </ion-button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
