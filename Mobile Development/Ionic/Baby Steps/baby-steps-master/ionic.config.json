@@ -1,7 +1,0 @@
-{
-  "name": "Baby Steps",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
