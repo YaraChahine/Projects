@@ -1,0 +1,292 @@
+<%- include('..\\partials\\header.ejs') %>
+
+  <body>
+ 
+    <% if(results.length !=0 && results.some(e=> e.Sessiontype == "Yoga")) { %>
+      <h1 class="table-title">Yoga Sessions Request</h1>
+      <div id="table-wrapper">
+        <div id="table-scroll">
+          <table id="customers" border="1">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Session Mode</th>
+                <th>Payment Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let YogaSessions=results.filter(document=> document.Sessiontype == "Yoga");
+                YogaSessions.forEach(document => {%>
+                <tr id="<%= document._id %>">
+                  <td scope="row">
+                    <%= document._id %>
+                  </td>
+                  <td>
+                    <%= document.name %>
+                  </td>
+                  <td>
+                    <%= document.email %>
+                  </td>
+                  <td>
+                    <%= document.date %>
+                  </td>
+                  <td>
+                    <%= document.time %>
+                  </td>
+                  <td>
+                    <%= document.deliveryMethod %>
+                  </td>
+                  <td>
+                    <%= document.paymentMethod %>
+                  </td>
+                  <td><input class="table-button" type="button" onclick="Remove('<%= document._id %>')"
+                      value="Delete" /></td>
+                  <td><input class="table-button" type="button" onclick=" Confirm('<%= document._id %>')"
+                      value=" Confirm" /></td>
+
+                </tr>
+
+                <%})%>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <% } %>
+
+        <% if(results.length !=0 && results.some(e=> e.Sessiontype == "Diet")) { %>
+          <h1 class="table-title"> Diet Session Requests</h1>
+          <div id="table-wrapper">
+            <div id="table-scroll">
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Session Mode</th>
+                    <th>Payment Method</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% let YogaSessions=results.filter(document=> document.Sessiontype == "Diet");
+                    YogaSessions.forEach(document => {%>
+                    <tr id="<%= document._id %>">
+                      <td scope="row">
+                        <%= document._id %>
+                      </td>
+                      <td>
+                        <%= document.name %>
+                      </td>
+                      <td>
+                        <%= document.email %>
+                      </td>
+                      <td>
+                        <%= document.date %>
+                      </td>
+                      <td>
+                        <%= document.time %>
+                      </td>
+                      <td>
+                        <%= document.deliveryMethod %>
+                      </td>
+                      <td>
+                        <%= document.paymentMethod %>
+                      </td>
+                      <td><input class="table-button" type="button" onclick="Remove('<%= document._id %>')"
+                          value="Delete" /></td>
+                      <td><input class="table-button" type="button" onclick=" Confirm('<%= document._id %>')"
+                          value=" Confirm" /></td>
+
+                    </tr>
+                    <%})%>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+          <% } %>
+
+
+
+            <% if(results.length !=0 && results.some(e=> e.Sessiontype == "Counselling")) { %>
+              <h1 class="table-title"> Counselling Session Requests</h1>
+              <div id="table-wrapper">
+                <div id="table-scroll">
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Session Mode</th>
+                        <th>Payment Method</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% let YogaSessions=results.filter(document=> document.Sessiontype == "Counselling");
+                        YogaSessions.forEach(document => {%>
+                        <tr id="<%= document._id %>">
+                          <td scope="row">
+                            <%= document._id %>
+                          </td>
+                          <td>
+                            <%= document.name %>
+                          </td>
+                          <td>
+                            <%= document.email %>
+                          </td>
+                          <td>
+                            <%= document.date %>
+                          </td>
+                          <td>
+                            <%= document.time %>
+                          </td>
+                          <td>
+                            <%= document.deliveryMethod %>
+                          </td>
+                          <td>
+                            <%= document.paymentMethod %>
+                          </td>
+                          <td><input class="table-button" type="button" onclick="Remove('<%= document._id %>')"
+                              value="Delete" /></td>
+                          <td><input class="table-button" type="button"
+                              onclick=" Confirm('<%= document._id %>')"
+                              value=" Confirm" /></td>
+
+                        </tr>
+
+                        <%})%>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+              <% } %>
+
+
+                <style>
+                  h1 {
+                    font-family: Arial, Helvetica, sans-serif;
+                    max-width: 33%;
+                    margin: auto;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    color: #007663;
+                  }
+
+                  #table-wrapper {
+                    position: relative;
+                  }
+
+                  #table-scroll {
+                    height: 350px;
+                    overflow: auto;
+                    margin-top: 20px;
+                  }
+
+                  .table-button {
+                    background-color: white;
+                    border-style: none;
+                    border-radius: 10px;
+                    padding: 8px;
+                    font-size: 13px;
+                    color: #007663;
+                    font-weight: 600;
+                    box-shadow: 3px 3px 4px lightgrey;
+                  }
+
+                  table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 80%;
+                    margin: auto;
+
+                    max-height: 90px;
+                    overflow-y: scroll;
+                  }
+
+                  table td,
+                  table th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                  }
+
+                  table tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                  }
+
+                  table tr:hover {
+                    background-color: #ddd;
+                  }
+
+                  table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: #007663;
+                    color: white;
+                  }
+                </style>
+
+
+                <script>
+                  function Remove(Id) {
+                    console.log(Id);
+                    fetch("http://localhost:3022/deleteArequest", {
+                      method: "DELETE",
+                      headers: {
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                      },
+                      body: `ID=${Id}`,
+                    })
+                      .then(function (response) {
+                        return response.text();
+                      })
+                      .then(function (data) {
+                        console.log(data);
+                        if (data == "success") {
+                          //Remove the row of the table via DOM manipulation
+                          const row = document.getElementById(Id);
+                          row.remove();
+                        }
+                      })
+                      .catch(function (err) {
+                        console.error(err);
+                      });
+                  }
+
+
+                  function  Confirm(ID) {
+                    console.log(ID)
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.open("post", "http://localhost:3022/ConfirmSessionRequest");
+                    const info = { id : ID}
+                    let infoJSON = JSON.stringify(info);
+                    xhttp.setRequestHeader('Content-type', 'application/json');
+                    xhttp.send(infoJSON);
+                    xhttp.onload = function(){
+                    //Here I am getting the response obj (I can use responseText)
+                    const responseFromServer = this.response;
+                    console.log(responseFromServer);
+                    if (responseFromServer=="success"){
+                      const row = document.getElementById(ID);
+                          row.remove();
+                    }
+
+                    }
+
+                  }
+
+                </script>
+  </body>
+
+  </html>

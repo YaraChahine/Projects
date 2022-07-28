@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body class="login-body">
+    <div class="login-div">
+        <h1>Wellness.</h1>
+        
+        <h2>Sign Up</h2>
+        <p>Once you sign up, your request will be pending the admin's approval.</p>
+        <%if(msg=="User Exists"){ %>    
+        <p id="warning" style="color:red;">Email already exists.</p>
+        <% } %>
+        <br>
+        <form action="/register" method="post" enctype="multipart/form-data"> 
+            <label for="firstname">Name:  </label>
+            <input type="text" name="name" required>
+            <br><br>
+            <label for="lastname" class="email">Email:  </label>
+            <input type="email" name="email" required>
+            <br><br>
+            <label for="username" class="email">Phone number:  </label>
+            <input type="tel" name="phone" required>
+            <br><br>
+            <label for="password">Password: </label> 
+            <input type="password" name="password" required>
+            <label for="image">Upload Image: </label> 
+            <input type="file" name="image" required>
+            <br><br><br><br>
+        
+            <br><br>
+            <button type="submit">Register</button>
+        </form>
+        
+
+        
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<%- include('..\\partials\\header.ejs') %>
+
+
+
+<style>
+
+    .image1{
+        margin:0;
+        width:390px;
+        height:430px;
+        position: relative;
+        top: 80px;
+        float: right;
+    }
+
+    .sbmt-button {
+        width: 20%;
+        margin-left: 43%;
+        padding: 10px;
+
+        background-color: #007663;
+        color:white;
+        border-radius: 5px;
+        border-style: none;
+        font-weight: 800;
+        font-size: 15px;
+    }
+    </style>
+
+
+    <div class="main-booking">
+
+                    
+        </h1>
+        <fieldset><form action="Recipe" method="post" enctype="multipart/form-data">
+            <label hidden for="type">Preferred session date: </label>
+            
+          
+            
+            <label for="title">Enter your recipe title: </label>
+            <input type="text" name="title" required>
+            <br><br>
+            <label for="ingredients">Ingredients (separated by a comma): </label>
+            <input type="text" name="ingredients" placeholder="i.e salt,pepper,etc.." required>
+            <br><br>
+            <label for="steps">Enter cooking steps: (separated by comma) </label>
+            <textarea required name="steps" placeholder="Pre-heat over to 180 degrees,Wash tomatoes"></textarea>
+            
+
+            <br><br>
+            <label for ="recipe-pic">Upload an image of your recipe: </label>
+            <input required type="file" name="recipe-pic">
+            
+            <br><br>
+            <button class="sbmt-button" type="submit">Submit</button> 
+
+        </form>
+    </fieldset>
+        
+
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+    <div class="info">
+        <div class="info2">
+            <h3 class="contact_msg">Contact us</h3>
+            <p class="num">+961 11 111 111
+            <p>
+                <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</body>
+</html>

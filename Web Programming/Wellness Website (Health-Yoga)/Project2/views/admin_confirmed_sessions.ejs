@@ -1,0 +1,229 @@
+<%- include('..\\partials\\header.ejs') %>
+
+  <body>
+    <h1 class="table-title">Upcoming Sessions</h1>
+    <div id="table-wrapper">
+      <div id="table-scroll">
+        <table id="customers" border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Session Mode</th>
+              <th>Payment Method</th>
+              <th>Type</th>
+
+              </tr>
+          </thead>
+          <tbody>
+    <%
+    if(results.length !=0)  {
+     %>
+    
+              <% results.forEach(function(document)  {
+                let t1= new Date(document.date);
+                let t2= new Date();
+                if (t1.getTime() > t2.getTime()){
+                %>
+                <tr id="<%= document._id %>">
+                  <td scope="row">
+                    <%= document._id %>
+                  </td>
+                  <td>
+                    <%= document.name %>
+                  </td>
+                  <td>
+                    <%= document.email %>
+                  </td>
+                  <td>
+                    <%= document.date %>
+                  </td>
+                  <td>
+                    <%= document.time %>
+                  </td>
+                  <td>
+                    <%= document.deliveryMethod %>
+                  </td>
+                  <td>
+                    <%= document.paymentMethod %>
+                  </td>
+                  <td>
+                    <%= document.Sessiontype %>
+                  </td>
+
+
+                </tr>
+
+                <%} else{return;}})%>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <% } %>
+
+
+
+      <button onclick="seeSessions()" class="see-btn">See Previous Sessions</button>
+      
+      
+      <div id="previous" style="display:none">
+      <%
+      if(results.length !=0)  {
+       %>
+        <h1 class="table-title">Previous Yoga Sessionss</h1>
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table id="customers" border="1">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Session Mode</th>
+                  <th>Payment Method</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% results.forEach(function(document)  {
+                  let t1= new Date(document.date);
+                  let t2= new Date();
+                  if (t1.getTime() < t2.getTime()){
+                  %>
+                  <tr id="<%= document._id %>">
+                    <td scope="row">
+                      <%= document._id %>
+                    </td>
+                    <td>
+                      <%= document.name %>
+                    </td>
+                    <td>
+                      <%= document.email %>
+                    </td>
+                    <td>
+                      <%= document.date %>
+                    </td>
+                    <td>
+                      <%= document.time %>
+                    </td>
+                    <td>
+                      <%= document.deliveryMethod %>
+                    </td>
+                    <td>
+                      <%= document.paymentMethod %>
+                    </td>
+                    <td>
+                        <%= document.Sessiontype %>
+                      </td>
+            
+  
+                  </tr>
+  
+                  <%} else{return;}})%>
+              </tbody>
+  
+            </table>
+          </div>
+        </div>
+        <% } %>
+  
+      </div>
+
+        <style>
+            h1 {
+              font-family: Arial, Helvetica, sans-serif;
+              max-width: 33%;
+              margin: auto;
+              margin-top: 30px;
+              margin-bottom: 30px;
+              color: #007663;
+            }
+
+            #table-wrapper {
+              position: relative;
+            }
+
+            #table-scroll {
+              height: 350px;
+              overflow: auto;
+              margin-top: 20px;
+            }
+
+            .table-button {
+              background-color: white;
+              border-style: none;
+              border-radius: 10px;
+              padding: 8px;
+              font-size: 13px;
+              color: #007663;
+              font-weight: 600;
+              box-shadow: 3px 3px 4px lightgrey;
+            }
+
+            table {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 80%;
+              margin: auto;
+              padding: 12px;
+              max-height: 90px;
+              overflow-y: scroll;
+            }
+
+            table td,
+            table th {
+              border: 1px solid #ddd;
+              padding: 13px;
+            }
+
+            table tr:nth-child(even) {
+              background-color: #f2f2f2;
+            }
+
+            table tr:hover {
+              background-color: #ddd;
+            }
+
+            table th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #007663;
+              color: white;
+            }
+
+
+            .see-btn{
+              min-width: 10%;
+              margin-left: 40%;
+              margin-top: 70px;
+              margin-bottom: 30px;
+              padding: 10px;
+              border-radius: 10px;
+              font-family: "Raleway";
+              background-color: #007663;
+              color:white;
+
+            }
+          </style>
+
+
+      
+<script>
+
+  function seeSessions() {
+    document.getElementById("previous").style.display="inline";
+  }
+
+  
+
+</script>
+
+  </body>
+  </html>

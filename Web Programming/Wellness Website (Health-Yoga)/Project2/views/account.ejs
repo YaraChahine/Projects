@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+
+    <script src="https://kit.fontawesome.com/5dd3046fcd.js" crossorigin="anonymous"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbarr">
+        <nav class="navbar">
+            <div class="title">
+                Wellness.
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a class="lnk" href="/">Home</a></li>
+                    <li><a class="lnk" href="/memberSessions">Sessions</a></li>
+                    <li><a class="lnk" href="/testimonial">Write a testimonial</a></li>
+                    <li><a class="lnk" href="/logout"><button class="logout">Log Out</button></a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <br><br><br><br><br><br>
+    <div class="flex-horizontal">
+    <div class="main flex-h-item1">
+
+        <h1>Hello <%= name %> !</h1>
+        <h3>What would you like to do today?<h3>
+    </div>
+    <div class="flex-h-item2">
+        <img src="data:image/<%=items.img.contentType%>;base64,
+             <%=items.img.data.toString('base64')%>">
+    </div>
+    </div>
+
+    <style>
+        .main{
+            min-width: 500px;
+            font-size:18px;
+        }
+        .main h1 {
+            font-size: 40px;
+        }
+        .flex-horizontal {
+            display: flex;
+            flex-direction: row;
+            max-width: 50%;
+            justify-content: space-around;
+            margin:auto;
+        }
+
+        .flex-h-item2 img {
+            width:160px;
+            height:160px;
+            border-radius: 100px;
+            box-shadow: 3px 3px 7px lightgrey;
+        }
+
+
+        @media only screen and (max-width: 992px) {
+            .flex-horizontal {
+                max-width:100px;
+                margin: 0;
+                flex-direction: column;
+            }
+
+            .main {
+                width:100px;
+            }
+
+        }
+        </style>
+
+
+
+
+
+
+    <div class="main-flex-container">
+        <a href="/bookYoga">
+            <div class="main-flex-item acc-item1"><img src="Photos/yoga-illustration.jpg">
+                <p>Book Yoga Session</p>
+            </div>
+        </a>
+        <a href="/bookCounselling">
+            <div class="main-flex-item acc-item2 "><img src="Photos/counselling.jpg">
+                <p>Book Counselling Session</p>
+            </div>
+        </a>
+        <a href="/bookDiet">
+            <div class="main-flex-item acc-item3"><img src="Photos/diet2.jpg">
+                <p>Book Session With Dietitian</p>
+            </div>
+        </a>
+        <a href="/submitRecipe">
+            <div class="main-flex-item acc-item3"><img src="Photos/diet.jpg">
+                <p>Submit a recipe</p>
+            </div>
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="info">
+        <div class="info2">
+            <h3 class="contact_msg">Contact us</h3>
+            <p class="num">+961 11 111 111
+            <p>
+                <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
